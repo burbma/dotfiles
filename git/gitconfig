@@ -1,0 +1,28 @@
+[user]
+	name = Matt Burbidge
+	email = mmburbidge@gmail.com
+[core]
+	editor = vim
+	excludesfile = /Users/mattburbidge/dotfiles/git/gitignore_global
+[merge]
+	tool = emerge
+[color]
+	ui = auto
+[push]
+	default = simple
+[github]
+	user = mmb90
+[credential]
+	helper = osxkeychain
+[alias]
+        lg = log --graph --pretty=format:' %C(red)%h%C(reset) - %s\n %C(blue)<%an> %C(green)%ar%C(yellow)%d%C(reset)\n'
+        s = status
+        rc = rebase --continue
+        pr = pull --rebase
+        a = add
+        A = add -A
+        cm = commit -m
+        pom = push origin master
+        co = checkout
+[magit]
+	hideCampaign = true

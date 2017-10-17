@@ -1,0 +1,51 @@
+# Avoid duplicates
+export HISTCONTROL=ignoreboth:erasedups
+export HISTFILESIZE=-1
+export HISTSIZE=-1
+export HISTTIMEFORMAT="[%h %d %H:%M:%S] "
+# Change the file location because certain bash sessions truncate .bash_history file upon close.
+# http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
+export HISTFILE=~/.bash_eternal_history
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+
+source ~/dotfiles/bash/bash_colors
+export GIT_PS1_SHOWDIRTYSTATE="true"
+export GIT_PS1_SHOWSTASHSTATE="true"
+export GIT_PS1_SHOWUNTRACKEDFILES="true"
+export GIT_PS1_SHOWUPSTREAM="auto"
+
+if [ "$SSH_CONNECTION" ] || [ "$SSH_CLIENT" ] || [ "$SSH_TTY" ]; then
+        PS1='\u@\h:\W/ $(__git_ps1 "\[$txtcyn\](%s)")\[$txtrst\]\$ '
+else
+        PS1='\W/ $(__git_ps1 "\[$txtcyn\](%s)")\[$txtrst\]\$ '
+fi
+
+bind 'set completion-ignore-case on'
+#export EDITOR=/Applications/Emacs.app/Contents/MacOS/bin-x86_64-10_9/emacsclient
+export EDITOR=vim
+export CLICOLOR=1
+export LSCOLORS=exfxbxdxcxegedabagacad
+
+if [[ $(uname) == 'Darwin' ]]; then
+        export PATH=/usr/local/bin:$PATH
+        export PATH=$PATH:/Library/TeX/texbin
+        for f in /usr/local/etc/bash_completion.d/*; do source $f; done
+        alias aa="export PATH=~/anaconda3/bin:$PATH"
+fi
+
+alias o="open"
+#alias pi="ssh pi@192.168.1.13"
+#alias em="open -a /Applications/Emacs.app/Contents/MacOS/Emacs"
+
+if [[ $(uname) == 'Linux' ]]; then
+        alias ls='ls --color=auto'
+        alias aa="export PATH=/opt/anaconda3/bin:$PATH"
+fi
+
+alias l1='ls -1'
+alias ll='ls -l'
+alias jsonpp='python -mjson.tool'
+alias jsonppc='jsonpp | pygmentize -l javascript'
+alias asa='source activate' # anaconda source activate
+alias asd='source deactivate' # anaconda source deactivate

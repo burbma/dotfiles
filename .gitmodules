@@ -1,0 +1,21 @@
+[submodule "bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "bundle/vim-fireplace"]
+	path = vim/bundle/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace.git
+[submodule "bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "bundle/paredit.vim"]
+	path = vim/bundle/paredit.vim
+	url = https://github.com/vim-scripts/paredit.vim.git
+[submodule "bundle/ctrlsf.vim"]
+	path = vim/bundle/ctrlsf.vim
+	url = https://github.com/dyng/ctrlsf.vim.git
+[submodule "bundle/vim-surround"]
+	path = vim/bundle/vim-surround
+	url = git://github.com/tpope/vim-surround.git
