@@ -312,7 +312,7 @@ you should place your code here."
   (add-hook 'spacemacs-buffer-mode-hook
             (lambda ()
               (set (make-local-variable 'mouse-1-click-follows-link) nil)))
-  (smartparens-global-strict-mode t)
+  (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
   (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")))
 
