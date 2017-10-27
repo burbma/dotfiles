@@ -93,8 +93,8 @@
 (require 'setup-paredit)
 (require 'setup-projectile)
 (require 'setup-python)
-(require 'setup-which-key)
-(require 'setup-yasnippet)
+;;(require 'setup-which-key)
+;;(require 'setup-yasnippet)
 
 ;; Lets start with a smattering of sanity
 (require 'sane-defaults)
