@@ -3,9 +3,9 @@
 ln -s ~/dotfiles/bash/bash_profile ~/.bash_profile
 ln -s ~/dotfiles/bash/bash_profile ~/.bashrc
 
-#ln -s ~/dotfiles/emacs ~/.emacs.d
-ln -s ~/dotfiles/spacemacs ~/.spacemacs
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+ln -s ~/dotfiles/emacs ~/.emacs.d
+#ln -s ~/dotfiles/spacemacs ~/.spacemacs
+#git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
 
