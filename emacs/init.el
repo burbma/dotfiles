@@ -31,9 +31,6 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
-;; Set up appearance early
-(require 'appearance)
-
 ;; Setup packages
 (require 'setup-package)
 
@@ -45,6 +42,7 @@
      cider
      clj-refactor
      clojure-mode
+     dash
      dockerfile-mode
      ein
      flycheck
@@ -68,6 +66,9 @@
      which-key
      yaml-mode
      yasnippet)))
+
+;; Set up appearance early
+(require 'appearance)
 
 (condition-case nil
     (init--install-packages)
@@ -114,7 +115,7 @@
   (require 'mac))
 
 ;; Font lock dash.el
-(eval-after-load "dash" '(dash-enable-font-lock))
+;; (eval-after-load "dash" '(dash-enable-font-lock))
 
 ;; Fill column indicator
 ;;(require 'fill-column-indicator)
