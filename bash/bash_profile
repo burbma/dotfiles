@@ -40,7 +40,7 @@ alias o="open"
 
 if [[ $(uname) == 'Linux' ]]; then
         alias ls='ls --color=auto'
-        alias aa="export PATH=/opt/anaconda3/bin:$PATH"
+        #alias aa="export PATH=/opt/anaconda3/bin:$PATH"
 fi
 
 alias l1='ls -1'
