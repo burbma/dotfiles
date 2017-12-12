@@ -311,12 +311,19 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; I can't remember this one but something was funny when I clicked on the
+  ;; recent file link on the home buffer and this fixed it.
   (add-hook 'spacemacs-buffer-mode-hook
             (lambda ()
               (set (make-local-variable 'mouse-1-click-follows-link) nil)))
+  ;; This prevents matched parens from being deleted ever.
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+  ;; Don't know.
   (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
-  (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")))
+  ;; The best ever.
+  (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
+  ;; Allows me to SPC-<tab> to jupyter notebooks.
+  (push "\\*ein.*\\*" spacemacs-useful-buffers-regexp))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
