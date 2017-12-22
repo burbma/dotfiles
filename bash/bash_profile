@@ -18,6 +18,8 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 if [ "$SSH_CONNECTION" ] || [ "$SSH_CLIENT" ] || [ "$SSH_TTY" ]; then
         PS1='\u@\h:\W/ $(__git_ps1 "\[$txtcyn\](%s)")\[$txtrst\]\$ '
 else
+        source /usr/local/opt/git/etc/bash_completion.d/git-completion.bash
+        source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
         PS1='\W/ $(__git_ps1 "\[$txtcyn\](%s)")\[$txtrst\]\$ '
 fi
 
