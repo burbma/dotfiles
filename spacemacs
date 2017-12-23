@@ -325,7 +325,7 @@ you should place your code here."
   (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
   ;; Allows me to SPC-<tab> to jupyter notebooks.
   (push "\\*ein.*\\*" spacemacs-useful-buffers-regexp)
-  (setq-default evil-escape-key-sequence "ue"))
+  (setq-default evil-escape-key-sequence "ht"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
