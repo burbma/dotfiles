@@ -1004,9 +1004,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2089 426 937 512 1440 -104 1920 1200 </string>
+	<string>2072 365 918 512 1440 -104 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1440 -104 1861 1167 1440 -104 1920 1177 </string>
+	<string>0 0 1440 877 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1510 -75 1846 1167 1440 -104 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1267,7 +1267,7 @@
 			<key>Custom Command</key>
 			<string>Yes</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>Yes</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Disable Printing</key>
@@ -2670,7 +2670,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-08T17:09:14Z</date>
+	<date>2018-01-12T14:08:07Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>

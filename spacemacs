@@ -31,12 +31,12 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     ansible
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     ansible
      clojure
      csv
      emacs-lisp
@@ -50,7 +50,6 @@ values."
      sql
      syntax-checking
      terraform
-     themes-megapack
      version-control
      yaml
      )
