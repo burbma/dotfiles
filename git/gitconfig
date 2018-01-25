@@ -11,7 +11,7 @@
 [push]
 	default = simple
 [github]
-	user = mmb90
+	user = burbma
 [credential]
 	helper = osxkeychain
 [alias]
