@@ -15,7 +15,7 @@
 ;; Load a cool theme!
 (defun use-default-theme ()
   (interactive)
-  (load-theme 'solarized-dark)
+  (load-theme 'default-black)
   (when (boundp 'mmb90/default-font)
     (set-face-attribute 'default nil :font mmb90/default-font)))
 
