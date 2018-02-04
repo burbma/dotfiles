@@ -19,37 +19,37 @@
 ;;; Key map. 'kb' indicates you'll find the setting in key-bindings.el
 
 ;; Navigation
-(modalka-define-kbd "<up>" "C-<up>")
-(modalka-define-kbd "<down>" "C-<down>")
-(modalka-define-kbd "<left>" "M-<left>")
-(modalka-define-kbd "<right>" "M-<right>")
-(modalka-define-kbd "f" "C-f")
-(modalka-define-kbd "b" "C-b")
-(modalka-define-kbd "n" "C-n")
-(modalka-define-kbd "p" "C-p")
-(modalka-define-kbd "a" "C-a")
-(modalka-define-kbd "e" "C-e")
-(modalka-define-kbd "s" "C-s")
-(modalka-define-kbd "v" "C-v")
-(modalka-define-kbd "," "C-,")
-(modalka-define-kbd "c p s g" "C-c p s g")
-(modalka-define-kbd "u SPC" "C-u C-SPC")
-(modalka-define-kbd "." "M-.")
-(modalka-define-kbd "<" "M-<")
-(modalka-define-kbd ">" "M->")
+(modalka-define-kbd "<up>" "C-<up>") ;; Move the screen but not point
+(modalka-define-kbd "<down>" "C-<down>") ;; Same
+(modalka-define-kbd "<left>" "M-<left>") ;; Same
+(modalka-define-kbd "<right>" "M-<right>") ;; Same
+(modalka-define-kbd "f" "C-f") ;; Move point forward a char
+(modalka-define-kbd "b" "C-b") ;; Move point back a char
+(modalka-define-kbd "n" "C-n") ;; Move point to next line
+(modalka-define-kbd "p" "C-p") ;; Move point to previous line
+(modalka-define-kbd "a" "C-a") ;; Beginning of line
+(modalka-define-kbd "e" "C-e") ;; End of line
+(modalka-define-kbd "s" "C-s") ;; Search
+(modalka-define-kbd "v" "C-v") ;; Down a screenful
+(modalka-define-kbd "," "C-,") ;; helm-imenu (jump to def)
+(modalka-define-kbd "c p s g" "C-c p s g") ;; Projectile grep
+(modalka-define-kbd "u SPC" "C-u C-SPC") ;; Pop mark? doesn't work
+(modalka-define-kbd "." "M-.") ;; Helm find definitions
+(modalka-define-kbd "<" "M-<") ;; Beginning of buffer
+(modalka-define-kbd ">" "M->") ;; End of buffer
 (modalka-define-kbd ";" "C-;") ;; (avy-goto-char)
 (modalka-define-kbd ":" "C-:") ;; (avy-goto-char-2)
 
 ;; Text mutation
-(modalka-define-kbd "k" "C-k")
-(modalka-define-kbd "y" "C-y")
-(modalka-define-kbd "d" "C-d")
+(modalka-define-kbd "k" "C-k") ;; Kill to end of line
+(modalka-define-kbd "y" "C-y") ;; Yank
+(modalka-define-kbd "d" "C-d") ;; Forward delete
 (modalka-define-kbd "h" "C-h") ;; kb (paredit-backward-delete)
 (modalka-define-kbd "N" "C-S-<down>") ;; kb (move-line-down)
 (modalka-define-kbd "P" "C-S-<up>") ;; kb (move-line-up)
-(modalka-define-kbd "m" "C-m")
-(modalka-define-kbd "w" "C-w")
-(modalka-define-kbd "\\" "C-M-\\")
+(modalka-define-kbd "m" "C-m") ;; New line, enter
+(modalka-define-kbd "w" "C-w") ;; Kill region
+(modalka-define-kbd "\\" "C-M-\\") ;; Indent region
 (modalka-define-kbd "x d" "C-S-d") ;; kb (duplicate-current-line)
 (modalka-define-kbd "x o" "C-x C-o")
 (modalka-define-kbd "x r t" "C-x r t")
@@ -103,7 +103,7 @@
 (modalka-define-kbd "SPC" "C-SPC")
 (modalka-define-kbd "g" "C-g")
 (modalka-define-kbd "x g" "C-x g") ;; (magit-status-fullscreen)
-(modalka-define-kbd "/" "C-/")
+(modalka-define-kbd "/" "C-/") ;; Undo
 (modalka-define-kbd "x r q" "C-x r q") ;; kb (save-buffers-kill-terminal)
 (modalka-define-kbd "?" "C-?")
 (modalka-define-kbd "r" "C-M-x")

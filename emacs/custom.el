@@ -4,6 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(cider-boot-parameters "cider repl -s wait")
+ '(cider-default-repl-command "boot")
+ '(cider-preferred-build-tool "boot")
  '(comint-buffer-maximum-size 20000)
  '(comint-completion-addsuffix t)
  '(comint-get-old-input (lambda nil "") t)
