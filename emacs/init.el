@@ -40,11 +40,13 @@
    '(ac-cider
      avy
      cider
+     change-inner
      clj-refactor
      clojure-mode
      dash
      dockerfile-mode
      ein
+     expand-region
      flycheck
      hcl-mode
      helm
@@ -78,9 +80,11 @@
 
 ;; Setup extensions
 (require 'setup-avy)
+(require 'setup-change-inner)
 (require 'setup-clojure)
 (require 'setup-css)
 (require 'setup-ein)
+(require 'setup-expand-region)
 (require 'setup-helm)
 (require 'setup-helm-projectile)
 (require 'setup-imenu)

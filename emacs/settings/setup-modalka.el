@@ -7,7 +7,6 @@
 ;;(add-to-list 'modalka-excluded-modes 'cider-repl-mode)
 (add-to-list 'modalka-excluded-modes 'doc-view-mode)
 (add-to-list 'modalka-excluded-modes 'ediff-mode)
-;;(add-to-list 'modalka-excluded-modes 'eshell-mode)
 (add-to-list 'modalka-excluded-modes 'git-commit-mode)
 (add-to-list 'modalka-excluded-modes 'git-rebase-mode)
 (add-to-list 'modalka-excluded-modes 'magit-popup-mode)
@@ -61,6 +60,8 @@
 (modalka-define-kbd "0" ")") ;; (paredit-close-round)
 (modalka-define-kbd "6" "M-^")
 (modalka-define-kbd "c p r" "C-c p r") ;; (projectile-replace)
+(modalka-define-kbd "c i" "M-i") ;; (change-inner)
+(modalka-define-kbd "c o" "M-o") ;; (change-outer
 ;; (modalka-define-kbd "C C" "C-S-c C-S-c") ;; (mc/edit-lines)
 ;; (modalka-define-kbd "<" "C-<") ;; (mc/mark-previous-like-this)
 ;; (modalka-define-kbd ">" "C->") ;; (mc/mark-next-like-this)
@@ -75,7 +76,6 @@
 (modalka-define-kbd "x s" "C-x M-s") ;; kb (save-all)
 (modalka-define-kbd "'" "C-'") ;; kb (mode-line-other-buffer)
 (modalka-define-kbd "x f" "C-x C-f")
-;; (modalka-define-kbd "!" "C-!") ;; kb (create-eshell)
 
 ;; Windows
 (modalka-define-kbd "x 0" "C-x 0")
@@ -108,6 +108,7 @@
 (modalka-define-kbd "?" "C-?")
 (modalka-define-kbd "r" "C-M-x")
 (modalka-define-kbd "x e" "C-x C-e")
+(modalka-define-kbd "@" "C-@") ;; (er/expand-region)
 
 ;; Useful for EIN
 (modalka-define-kbd "c a" "C-c C-a")
