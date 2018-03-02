@@ -16,8 +16,7 @@
 (defun use-default-theme ()
   (interactive)
   (load-theme 'default-black)
-  (when (boundp 'mmb90/default-font)
-    (set-face-attribute 'default nil :font mmb90/default-font)))
+  (set-frame-font "-*-Source Code Pro-light-normal-normal-*-14-*-*-*-m-0-iso10646-1"))
 
 (use-default-theme)
 

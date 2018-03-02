@@ -111,13 +111,6 @@
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
 
-;; Are we on a mac?
-(setq is-mac (equal system-type 'darwin))
-
-;; Set modifier keys, font, shell stuff.
-(when is-mac
-  (require 'mac))
-
 ;; Font lock dash.el
 ;; (eval-after-load "dash" '(dash-enable-font-lock))
 
