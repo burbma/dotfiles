@@ -43,6 +43,7 @@
      change-inner
      clj-refactor
      clojure-mode
+     conda
      dash
      dockerfile-mode
      ein
@@ -64,6 +65,7 @@
      projectile
      smartparens
      smooth-scrolling
+     terraform-mode
      vmd-mode ;; npm install -g vmd
      which-key
      yaml-mode
