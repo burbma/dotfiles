@@ -52,3 +52,6 @@ alias jsonpp='python -mjson.tool'
 alias jsonppc='jsonpp | pygmentize -l javascript'
 alias asa='source activate' # anaconda source activate
 alias asd='source deactivate' # anaconda source deactivate
+alias ..='cd ..'
+alias ..l='cd .. && ls'
+alias ..ll='cd .. && ll'
