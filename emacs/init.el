@@ -110,6 +110,9 @@
       `(("." . ,(expand-file-name
                  (concat user-emacs-directory "backups")))))
 
+;; Don't swallow command-h (M-h)
+(setq mac-pass-command-to-system nil)
+
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
 

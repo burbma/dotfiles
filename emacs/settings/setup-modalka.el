@@ -11,6 +11,7 @@
 (add-to-list 'modalka-excluded-modes 'git-rebase-mode)
 (add-to-list 'modalka-excluded-modes 'magit-popup-mode)
 (add-to-list 'modalka-excluded-modes 'magit-status-mode)
+(add-to-list 'modalka-excluded-modes 'dired-mode)
 ;;(add-to-list 'modalka-excluded-modes 'text-mode)
 (setq modalka-cursor-type 'box)
 
@@ -76,6 +77,7 @@
 (modalka-define-kbd "x s" "C-x M-s") ;; kb (save-all)
 (modalka-define-kbd "'" "C-'") ;; kb (mode-line-other-buffer)
 (modalka-define-kbd "x f" "C-x C-f")
+(modalka-define-kbd "x j" "C-x C-j") ;; (dired-jump)
 
 ;; Windows
 (modalka-define-kbd "x 0" "C-x 0")
