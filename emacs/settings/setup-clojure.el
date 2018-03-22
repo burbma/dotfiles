@@ -22,4 +22,6 @@
 (put-clojure-indent 's/fdef 1)
 (put-clojure-indent 'compj/context 1)
 
+(define-key clojure-mode-map (kbd "C-:") nil)
+
 (provide 'setup-clojure)
