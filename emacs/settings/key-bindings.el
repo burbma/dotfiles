@@ -56,6 +56,9 @@
 (global-set-key (kbd "M-<left>") (lambda () (interactive) (scroll-right 2)))
 (global-set-key (kbd "M-<right>") (lambda () (interactive) (scroll-left 2)))
 
+;; Dired jump
+(global-set-key (kbd "C-x C-j") 'dired-jump)
+
 ;; Completion that uses many different methods to find options.
 ;;(global-set-key (kbd "C-.") 'hippie-expand-no-case-fold)
 ;;(global-set-key (kbd "C-:") 'hippie-expand-lines)

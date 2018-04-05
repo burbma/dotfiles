@@ -52,7 +52,6 @@
      hcl-mode
      helm
      helm-projectile
-     jedi
      magit
      markdown-mode
      modalka
