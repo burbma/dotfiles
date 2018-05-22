@@ -55,3 +55,17 @@ alias asd='source deactivate' # anaconda source deactivate
 alias ..='cd ..'
 alias ..l='cd .. && ls'
 alias ..ll='cd .. && ll'
+alias pcat="pygmentize -f terminal256 -O style=native -g"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mattburbidge/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/mattburbidge/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mattburbidge/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/mattburbidge/Downloads/google-cloud-sdk/completion.bash.inc'; fi
