@@ -168,4 +168,6 @@
 
 ; (add-to-list 'find-file-not-found-functions 'my-create-non-existent-directory)
 
+(setq js-indent-level 2)
+
 (provide 'sane-defaults)
