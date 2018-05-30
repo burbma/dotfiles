@@ -23,5 +23,9 @@ set backspace=indent,eol,start
 " Switch syntax highlighting on
 syntax on
 
+" Set color theme
+set background=dark
+colorscheme solarized
+
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
