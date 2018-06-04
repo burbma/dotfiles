@@ -8,12 +8,16 @@ set backspace=indent,eol,start
 " Switch syntax highlighting on
 syntax on
 
-" Enable file type detection and do language-dependent indenting.
-filetype plugin indent on
+" tab->spaces and such
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
 
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
-Plug 'scrooloose/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 set background=dark
