@@ -17,7 +17,6 @@ set autoindent
 
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
-Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 set background=dark
