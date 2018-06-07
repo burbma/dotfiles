@@ -19,8 +19,9 @@
   s = status
   rc = rebase --continue
   pr = pull --rebase
-  a = add -p
-  A = add -A
+  a = add
+  ap = add -p
+  aa = add -A
   cm = commit -m
   pom = push origin master
   co = checkout
