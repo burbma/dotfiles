@@ -24,21 +24,28 @@ set wildmode=list:longest,full
 " Treat build.boot as a clojure file.
 autocmd BufNewFile,BufRead *.boot   set filetype=clojure
 
-
-" START remove trailing whitespace on save and keep cursor position.
+" Remove trailing whitespace on save and keep cursor position.
 function! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
   %s/\s\+$//e
   call cursor(l, c)
 endfun
-
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-" END remove trailing whitespace
 
+" https://unix.stackexchange.com/a/383044
+" Triger `autoread` when files changes on disk
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
 
 set background=dark
