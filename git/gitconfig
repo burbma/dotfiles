@@ -3,7 +3,7 @@
 	email = mmburbidge@gmail.com
 [core]
 	editor = vim
-	excludesfile = /Users/mattburbidge/dotfiles/git/gitignore_global
+	excludesfile = ~/dotfiles/git/gitignore_global
 [merge]
 	tool = emerge
 [color]
