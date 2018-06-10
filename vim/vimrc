@@ -18,6 +18,7 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 
+" When doing :e <tab> shows list of possible completions like in bash.
 set wildmode=list:longest,full
 
 " Remove trailing whitespace on save and keep cursor position.
