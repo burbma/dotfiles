@@ -21,7 +21,11 @@ set autoindent
 " When doing :e <tab> shows list of possible completions like in bash.
 set wildmode=list:longest,full
 
-" Remove trailing whitespace on save and keep cursor position.
+" Treat build.boot as a clojure file.
+autocmd BufNewFile,BufRead *.boot   set filetype=clojure
+
+
+" START remove trailing whitespace on save and keep cursor position.
 function! <SID>StripTrailingWhitespaces()
   let l = line(".")
   let c = col(".")
@@ -30,7 +34,8 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-" End remove trailing whitespace
+" END remove trailing whitespace
+
 
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
