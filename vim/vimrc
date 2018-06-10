@@ -18,6 +18,8 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 
+set wildmode=list:longest,full
+
 " Remove trailing whitespace on save and keep cursor position.
 function! <SID>StripTrailingWhitespaces()
   let l = line(".")
