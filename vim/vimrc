@@ -2,14 +2,31 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" Make backspace behave in a sane manner.
-set backspace=indent,eol,start
+call plug#begin('~/dotfiles/vim/plugged')
+Plug 'altercation/vim-colors-solarized'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+call plug#end()
 
 " Switch syntax highlighting on
 syntax on
 
+" Set color theme
+set background=dark
+colorscheme solarized
+
+set backspace=indent,eol,start " Make backspace behave in a sane manner
+
 " A visual marker of 80 char lines
 set colorcolumn=80
+
+" Highlight search results
+set hlsearch
+
+" Show matches as search is typed
+set incsearch
+
+" Show line, column, %, at bottom of window
+set ruler
 
 " tab->spaces and such
 set expandtab
@@ -39,10 +56,3 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " Need vim-tmux-focus-events plugin and `set -g focus-events on` in .tmux.conf
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 
-call plug#begin('~/dotfiles/vim/plugged')
-Plug 'altercation/vim-colors-solarized'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-call plug#end()
-
-set background=dark
-colorscheme solarized
