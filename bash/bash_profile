@@ -46,6 +46,7 @@ if [[ $(uname) == 'Linux' ]]; then
         alias aa="export PATH=/opt/anaconda/bin:$PATH"
 fi
 
+alias l='ls'
 alias l1='ls -1'
 alias ll='ls -l'
 alias jsonpp='python -mjson.tool'
