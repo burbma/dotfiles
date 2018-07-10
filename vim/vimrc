@@ -2,9 +2,14 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+let g:mapleader = ","
+
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'vim-scripts/paredit.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fireplace'
 call plug#end()
 
 " Switch syntax highlighting on
