@@ -64,3 +64,4 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 
 " For python-mode
 autocmd FileType python setlocal nonumber
+let g:pymode_lint = 0
