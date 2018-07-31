@@ -10,6 +10,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'vim-scripts/paredit.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 call plug#end()
 
 " Switch syntax highlighting on
@@ -61,3 +62,5 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " Need vim-tmux-focus-events plugin and `set -g focus-events on` in .tmux.conf
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 
+" For python-mode
+autocmd FileType python setlocal nonumber
