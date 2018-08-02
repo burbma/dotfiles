@@ -1,6 +1,6 @@
 [user]
 	name = Matt Burbidge
-	email = mmburbidge@gmail.com
+	email = burbma@gmail.com
 [core]
 	editor = vim
 	excludesfile = ~/dotfiles/git/gitignore_global
