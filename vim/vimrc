@@ -32,8 +32,22 @@ set hlsearch
 " Show matches as search is typed
 set incsearch
 
+" Leader a to remove highlighted search fields
+nnoremap <leader>n :nohlsearch<cr>
+
 " Show line, column, %, at bottom of window
 set ruler
+
+" Searches are case-sensitive only if they contain upper-case
+set ignorecase
+set smartcase
+
+" Begin scrolling before hitting edges
+set scrolloff=7
+
+" Store temporary files in one place
+set backupdir=~/.vim-tmp
+set directory=~/.vim-tmp
 
 " tab->spaces and such
 set expandtab
@@ -44,9 +58,6 @@ set autoindent
 
 " When doing :e <tab> shows list of possible completions like in bash.
 set wildmode=list:longest,full
-
-" Treat build.boot as a clojure file.
-autocmd BufNewFile,BufRead *.boot   set filetype=clojure
 
 " Remove trailing whitespace on save and keep cursor position.
 function! <SID>StripTrailingWhitespaces()
@@ -62,6 +73,9 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
 " Need vim-tmux-focus-events plugin and `set -g focus-events on` in .tmux.conf
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+
+" Treat build.boot as a clojure file.
+autocmd BufNewFile,BufRead build.boot set filetype=clojure
 
 " For python-mode
 autocmd FileType python setlocal nonumber
