@@ -12,6 +12,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Switch syntax highlighting on
@@ -80,3 +81,6 @@ autocmd BufNewFile,BufRead build.boot set filetype=clojure
 " For python-mode
 autocmd FileType python setlocal nonumber
 let g:pymode_lint = 0
+
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2

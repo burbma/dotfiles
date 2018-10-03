@@ -1,3 +1,2 @@
 vim/plugged
-tmux/plugins
-.netrwhist
+vim/.netrwhist
