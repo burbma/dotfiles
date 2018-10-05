@@ -57,6 +57,11 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 
+" vsplit opens to the right instead of left
+set splitright
+" split opens below instead of pushing current down
+set splitbelow
+
 " When doing :e <tab> shows list of possible completions like in bash.
 set wildmode=list:longest,full
 
