@@ -11,7 +11,7 @@ ln -sf ~/dotfiles/git/gitconfig ~/.gitconfig
 
 ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim ~/.vim
-mkdir ~/.vim-tmp
+mkdir -p ~/.vim-tmp
 
 ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 
