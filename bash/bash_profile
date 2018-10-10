@@ -32,6 +32,7 @@ if [[ $(uname) == 'Darwin' ]]; then
         export PATH=/usr/local/bin:$PATH
         export PATH=$PATH:/Library/TeX/texbin
         for f in /usr/local/etc/bash_completion.d/*; do source $f; done
+        alias aa="export PATH=~/anaconda3/bin:$PATH"
         alias deep="osascript ~/dotfiles/applescript/deep.scpt"
         alias shallow="osascript ~/dotfiles/applescript/shallow.scpt"
 fi
@@ -42,6 +43,7 @@ alias o="open"
 if [[ $(uname) == 'Linux' ]]; then
         source /etc/bash_completion.d/git-prompt
         alias ls='ls --color=auto'
+        alias aa="export PATH=/opt/anaconda3/bin:$PATH"
 fi
 
 alias gf='fg'
@@ -50,7 +52,6 @@ alias l1='ls -1'
 alias ll='ls -l'
 alias jsonpp='python -mjson.tool'
 alias jsonppc='jsonpp | pygmentize -l javascript'
-alias aa="export PATH=~/anaconda3/bin:$PATH"
 alias asa='source activate' # anaconda source activate
 alias asd='source deactivate' # anaconda source deactivate
 alias ..='cd ..'
