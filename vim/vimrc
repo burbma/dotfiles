@@ -12,7 +12,6 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
-Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Switch syntax highlighting on
@@ -23,6 +22,12 @@ set background=dark
 colorscheme solarized
 
 set backspace=indent,eol,start " Make backspace behave in a sane manner
+
+" Navigate panes with ctrl-h(jkl) instead of ctrl-w h(jkl)
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " A visual marker of 80 char lines
 set colorcolumn=80
