@@ -965,10 +965,12 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>998 235 445 103 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>163 302 796 486 0 0 1680 1027 </string>
+	<string>113 529 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>40 264 570 452 0 0 1680 1027 </string>
+	<string>39 84 1438 807 0 0 1680 1027 </string>
 	<key>NeverWarnAboutShortLivedSessions_9FE8C40B-DE77-43D5-838A-D97E4A1C555E</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_9FE8C40B-DE77-43D5-838A-D97E4A1C555E_selection</key>
@@ -1581,7 +1583,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
