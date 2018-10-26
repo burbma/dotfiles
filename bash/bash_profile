@@ -1,5 +1,6 @@
 if [[ $(uname) == 'Darwin' ]]; then
         export PATH=/usr/local/bin:$PATH
+        export PATH="/usr/local/sbin:$PATH"
         [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
         alias aa="export PATH=~/miniconda3/bin:$PATH"
         alias deep="osascript ~/dotfiles/applescript/deep.scpt"
