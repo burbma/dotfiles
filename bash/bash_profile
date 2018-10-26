@@ -1,3 +1,20 @@
+if [[ $(uname) == 'Darwin' ]]; then
+        source /usr/local/opt/git/etc/bash_completion.d/git-completion.bash
+        source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
+        export PATH=/usr/local/bin:$PATH
+        export PATH=$PATH:/Library/TeX/texbin
+        for f in /usr/local/etc/bash_completion.d/*; do source $f; done
+        alias aa="export PATH=~/miniconda3/bin:$PATH"
+        alias deep="osascript ~/dotfiles/applescript/deep.scpt"
+        alias shallow="osascript ~/dotfiles/applescript/shallow.scpt"
+fi
+
+if [[ $(uname) == 'Linux' ]]; then
+        source /etc/bash_completion.d/git-prompt
+        alias ls='ls --color=auto'
+        alias aa="export PATH=/opt/anaconda3/bin:$PATH"
+fi
+
 # Avoid duplicates
 export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=-1
@@ -26,25 +43,8 @@ export EDITOR=vim
 export CLICOLOR=1
 export LSCOLORS=exfxbxdxcxegedabagacad
 
-if [[ $(uname) == 'Darwin' ]]; then
-        source /usr/local/opt/git/etc/bash_completion.d/git-completion.bash
-        source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
-        export PATH=/usr/local/bin:$PATH
-        export PATH=$PATH:/Library/TeX/texbin
-        for f in /usr/local/etc/bash_completion.d/*; do source $f; done
-        alias aa="export PATH=~/miniconda3/bin:$PATH"
-        alias deep="osascript ~/dotfiles/applescript/deep.scpt"
-        alias shallow="osascript ~/dotfiles/applescript/shallow.scpt"
-fi
-
 alias o="open"
 #alias pi="ssh pi@192.168.1.13"
-
-if [[ $(uname) == 'Linux' ]]; then
-        source /etc/bash_completion.d/git-prompt
-        alias ls='ls --color=auto'
-        alias aa="export PATH=/opt/anaconda3/bin:$PATH"
-fi
 
 alias gf='fg'
 alias asa='source activate' # anaconda source activate
