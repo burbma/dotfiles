@@ -2,7 +2,6 @@ if [[ $(uname) == 'Darwin' ]]; then
         source /usr/local/opt/git/etc/bash_completion.d/git-completion.bash
         source /usr/local/opt/git/etc/bash_completion.d/git-prompt.sh
         export PATH=/usr/local/bin:$PATH
-        export PATH=$PATH:/Library/TeX/texbin
         for f in /usr/local/etc/bash_completion.d/*; do source $f; done
         alias aa="export PATH=~/miniconda3/bin:$PATH"
         alias deep="osascript ~/dotfiles/applescript/deep.scpt"
