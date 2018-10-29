@@ -42,6 +42,9 @@ nnoremap <leader>n :nohlsearch<cr>
 " Show line, column, %, at bottom of window
 set ruler
 
+" Don't wrap long lines
+:set nowrap
+
 " Searches are case-sensitive only if they contain upper-case
 set ignorecase
 set smartcase
