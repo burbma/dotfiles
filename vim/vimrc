@@ -2,8 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-let g:mapleader = ","
-
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -12,7 +10,6 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
-Plug 'justinmk/vim-sneak'
 call plug#end()
 
 " Switch syntax highlighting on
