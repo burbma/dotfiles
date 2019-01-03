@@ -9,10 +9,12 @@ ln -sf ~/dotfiles/emacs ~/.emacs.d
 
 ln -sf ~/dotfiles/git/gitconfig ~/.gitconfig
 
-ln -sf ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim ~/.vim
 mkdir -p ~/.vim-tmp
 vim +PlugInstall +qall
+
+mkdir -p ~/.config/nvim
+ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
 ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 

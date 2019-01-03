@@ -9,7 +9,7 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'python-mode/python-mode', {'branch': 'develop'}
 Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
