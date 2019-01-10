@@ -2,6 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+let g:mapleader = ","
+
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
@@ -37,14 +39,16 @@ set hlsearch
 " Show matches as search is typed
 set incsearch
 
-" Leader a to remove highlighted search fields
+" Leader n to remove highlighted search fields
 nnoremap <leader>n :nohlsearch<cr>
+" Leader s to save all files
+nnoremap <leader>s :wa<cr>
 
 " Show line, column, %, at bottom of window
 set ruler
 
 " Don't wrap long lines
-:set nowrap
+set nowrap
 
 " Searches are case-sensitive only if they contain upper-case
 set ignorecase
