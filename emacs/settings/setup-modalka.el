@@ -32,7 +32,7 @@
 (modalka-define-kbd "s" "C-s") ;; Search
 (modalka-define-kbd "v" "C-v") ;; Down a screenful
 (modalka-define-kbd "," "C-,") ;; helm-imenu (jump to def)
-(modalka-define-kbd "c p s g" "C-c p s g") ;; Projectile grep
+(modalka-define-kbd "c p s s" "C-c p s s") ;; Projectile ag
 (modalka-define-kbd "u SPC" "C-u C-SPC") ;; Pop mark? doesn't work
 (modalka-define-kbd "." "M-.") ;; Helm find definitions
 (modalka-define-kbd "<" "M-<") ;; Beginning of buffer
@@ -71,7 +71,7 @@
 ;; Buffers
 (modalka-define-kbd "c p f" "C-c p f") ;; (helm-projectile-find-file)
 (modalka-define-kbd "c p p" "C-c p p") ;; (helm-projectile-switch-project)
-(modalka-define-kbd "c p k" "C-c p k") ;; (helm-projectile-switch-project)
+(modalka-define-kbd "c p k" "C-c p k") ;; (helm-projectile-kill-buffers)
 (modalka-define-kbd "x b" "C-x b")
 (modalka-define-kbd "x k" "C-x k")
 (modalka-define-kbd "x s" "C-x M-s") ;; kb (save-all)

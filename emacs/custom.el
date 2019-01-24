@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(cider-boot-parameters "cider repl -s wait")
  '(cider-default-repl-command "boot")
+ '(cider-jack-in-default "boot")
  '(cider-preferred-build-tool "boot")
  '(comint-buffer-maximum-size 20000)
  '(comint-completion-addsuffix t)
@@ -24,9 +25,9 @@
  '(mouse-wheel-mode nil)
  '(package-selected-packages
    (quote
-    (conda terraform-mode change-inner expand-region avy hcl-mode dockerfile-mode vmd-mode org org-ac ox-gfm org-bullets jedi markdown-mode yaml-mode ein exec-path-from-shell centered-cursor-mode smartparens modalka smooth-scrolling helm dash ac-cider clj-refactor which-key helm-projectile cider clojure-mode flycheck paredit magit solarized-theme)))
+    (helm-ag conda terraform-mode change-inner expand-region avy hcl-mode dockerfile-mode vmd-mode org org-ac ox-gfm org-bullets jedi markdown-mode yaml-mode ein exec-path-from-shell centered-cursor-mode smartparens modalka smooth-scrolling helm dash ac-cider clj-refactor which-key helm-projectile cider clojure-mode flycheck paredit magit solarized-theme)))
  '(protect-buffer-bury-p nil t)
- '(tramp-default-method "ssh"))
+ '(tramp-default-method "ssh" nil (tramp)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

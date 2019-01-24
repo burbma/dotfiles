@@ -51,6 +51,7 @@
      flycheck
      hcl-mode
      helm
+     helm-ag
      helm-projectile
      magit
      markdown-mode

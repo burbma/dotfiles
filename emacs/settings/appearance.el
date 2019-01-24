@@ -44,4 +44,6 @@
 
 (rename-modeline "clojure-mode" clojure-mode "clj")
 
+(add-hook 'window-configuration-change-hook 'balance-windows)
+
 (provide 'appearance)
