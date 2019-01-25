@@ -116,13 +116,6 @@
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
 
-;; Font lock dash.el
-;; (eval-after-load "dash" '(dash-enable-font-lock))
-
-;; Fill column indicator
-;;(require 'fill-column-indicator)
-;;(setq fci-rule-color "#111122")
-
 ;; Setup key bindings
 (require 'key-bindings)
 
@@ -130,6 +123,14 @@
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
+
+;; Are we on a mac?
+(setq is-mac (equal system-type 'darwin))
+;; Set modifier keys, font, shell stuff.
+(when is-mac
+  (require 'mac))
+
+(toggle-frame-fullscreen)
 
 ;; Emacs server
 (require 'server)

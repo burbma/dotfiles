@@ -81,8 +81,6 @@
 (savehist-mode 1)
 (setq history-length 1000)
 
-;; Undo/redo window configuration with C-c <left>/<right>
-;;(winner-mode 1)
 
 ;; Never insert tabs
 (set-default 'indent-tabs-mode nil)
@@ -105,17 +103,6 @@
 ;; Don't be so stingy on the memory, we have lots now. It's the distant future.
 (setq gc-cons-threshold 20000000)
 
-;; org-mode: Don't ruin S-arrow to switch windows please (use M-+ and M-- instead to toggle)
-;;(setq org-replace-disputed-keys t)
-
-;; Fontify org-mode code blocks
-;;(setq org-src-fontify-natively t)
-
-;; Represent undo-history as an actual tree (visualize with C-x u)
-;; (setq undo-tree-mode-lighter "")
-;; (require 'undo-tree)
-;; (global-undo-tree-mode)
-
 ;; Sentences do not need double spaces to end. Period.
 (set-default 'sentence-end-double-space nil)
 
@@ -126,47 +113,11 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-;; A saner ediff
-;;(setq ediff-diff-options "-w")
-;;(setq ediff-split-window-function 'split-window-horizontally)
-;;(setq ediff-window-setup-function 'ediff-setup-windows-plain)
-
-;; No electric indent
-;;(setq electric-indent-mode nil)
-
 ;; Newline at end of file
 (setq require-final-newline t)
 
 ;; Clean trailing whitespace etc. on save
 (add-hook 'before-save-hook 'whitespace-cleanup)
-
-
-;; Nic says eval-expression-print-level needs to be set to nil (turned off) so
-;; that you can always see what's happening.
-;;(setq eval-expression-print-level nil)
-
-;; When popping the mark, continue popping until the cursor actually moves
-;; Also, if the last command was a copy - skip past all the expand-region cruft.
-; (defadvice pop-to-mark-command (around ensure-new-position activate)
-;   (let ((p (point)))
-;     (when (eq last-command 'save-region-or-current-line)
-;       ad-do-it
-;       ad-do-it
-;       ad-do-it)
-;     (dotimes (i 10)
-;       (when (= p (point)) ad-do-it))))
-
-; (setq set-mark-command-repeat-pop t)
-
-;; Offer to create parent directories if they do not exist
-;; http://iqbalansari.github.io/blog/2014/12/07/automatically-create-parent-directories-on-visiting-a-new-file-in-emacs/
-; (defun my-create-non-existent-directory ()
-;   (let ((parent-directory (file-name-directory buffer-file-name)))
-;     (when (and (not (file-exists-p parent-directory))
-;                (y-or-n-p (format "Directory `%s' does not exist! Create it?" parent-directory)))
-;       (make-directory parent-directory t))))
-
-; (add-to-list 'find-file-not-found-functions 'my-create-non-existent-directory)
 
 (setq js-indent-level 2)
 

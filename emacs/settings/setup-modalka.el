@@ -123,5 +123,4 @@
 (modalka-define-kbd "c x" "C-c C-x")
 (modalka-define-kbd "c z" "C-c C-z")
 
-
 (provide 'setup-modalka)
