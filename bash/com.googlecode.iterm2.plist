@@ -979,7 +979,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2650 768 620 392 1680 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>482 511 796 486 0 0 1680 1050 </string>
+	<string>482 485 796 486 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1680 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1089,12 +1089,16 @@
 			</dict>
 			<key>Ansi 4 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.73333333333333328</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.35686274509803922</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.015686274509803921</real>
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
@@ -1563,13 +1567,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73423302173614502</real>
+				<real>0.7803921568627451</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.35916060209274292</real>
+				<real>0.14509803921568629</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.0078431372549019607</real>
 			</dict>
 			<key>Log Directory</key>
 			<string></string>
