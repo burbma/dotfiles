@@ -20,12 +20,6 @@ syntax on
 
 set backspace=indent,eol,start " Make backspace behave in a sane manner
 
-" Navigate panes with ctrl-h(jkl) instead of ctrl-w h(jkl)
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
 " Highlight search results
 set hlsearch
 
