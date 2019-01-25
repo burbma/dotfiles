@@ -85,8 +85,5 @@ autocmd BufNewFile,BufRead build.boot set filetype=clojure
 autocmd FileType python setlocal nonumber
 let g:pymode_lint = 0
 
-" Write all buffers before navigating from Vim to tmux pane
-let g:tmux_navigator_save_on_switch = 2
-
 " Set up Ctrl-P Fuzzy File Finder
 let g:ctrlp_map = '<leader>t'
