@@ -10,16 +10,9 @@
 ;; (global-set-key (kbd "C-x g") 'magit-status)
 
 (defun magit-key-mode--add-default-options (arguments)
-  (let* ((mode (car arguments))
-         (options (cadr arguments))
-         (default-options (cdr (assoc mode my/magit-default-options))))
-    (list mode (delete-dups (delq nil (append options default-options))))))
-
-(setq my/magit-default-options
-      `(
-        (pulling "--rebase")
-        ))
-
+  (if (eq (car arguments) 'pulling)
+      (list 'pulling (list "--rebase"))
+    arguments))
 (advice-add 'magit-key-mode :filter-args #'magit-key-mode--add-default-options)
 
 (provide 'setup-magit)
