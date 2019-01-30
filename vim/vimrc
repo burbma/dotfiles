@@ -11,7 +11,7 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
-Plug 'python-mode/python-mode', {'branch': 'develop'}
+Plug 'vim-scripts/indentpython.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
@@ -80,10 +80,6 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 
 " Treat build.boot as a clojure file.
 autocmd BufNewFile,BufRead build.boot set filetype=clojure
-
-" For python-mode
-autocmd FileType python setlocal nonumber
-let g:pymode_lint = 0
 
 " Set up Ctrl-P Fuzzy File Finder
 let g:ctrlp_map = '<leader>t'
