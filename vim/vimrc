@@ -6,6 +6,7 @@ let g:mapleader = ","
 
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
+Plug 'jnurmine/Zenburn'
 Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
@@ -15,8 +16,16 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
+" 256 Colors!
+set t_Co=256
+
 " Switch syntax highlighting on
 syntax on
+
+" Set color theme
+set background=dark
+colorscheme zenburn
+set colorcolumn=80
 
 set backspace=indent,eol,start " Make backspace behave in a sane manner
 
