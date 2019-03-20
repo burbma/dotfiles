@@ -2160,9 +2160,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2650 768 620 392 1680 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2459 663 918 512 1680 0 2560 1440 </string>
+	<string>2436 1023 796 486 1680 315 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1681 224 1846 1167 1680 0 2560 1440 </string>
+	<string>0 0 1846 1027 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-148 1231 1846 1167 -491 1050 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_9FE8C40B-DE77-43D5-838A-D97E4A1C555E</key>
@@ -4792,12 +4792,16 @@
 			<false/>
 			<key>Background Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.24705882370471954</real>
+				<real>0.22745098039215686</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.24705882370471954</real>
+				<real>0.22745098039215686</real>
 				<key>Red Component</key>
-				<real>0.24705882370471954</real>
+				<real>0.22745098039215686</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -6264,7 +6268,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-18T21:06:30Z</date>
+	<date>2019-03-20T15:14:34Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
