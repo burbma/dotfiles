@@ -63,6 +63,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set autoindent
+autocmd FileType python set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+autocmd FileType yaml set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 " vsplit opens to the right instead of left
 set splitright

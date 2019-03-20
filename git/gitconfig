@@ -15,7 +15,7 @@
 [credential]
 	helper = osxkeychain
 [alias]
-  lg = log --graph --pretty=format:' %C(red)%h%C(reset) - %s\n %C(blue)<%an> %C(green)%ar%C(yellow)%d%C(reset)\n'
+  lg = log --graph --all --pretty=format:' %C(red)%h%C(reset) - %s\n %C(blue)<%an> %C(green)%ar%C(yellow)%d%C(reset)\n'
   s = status
   rc = rebase --continue
   pr = pull --rebase
