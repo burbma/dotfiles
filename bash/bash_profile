@@ -42,6 +42,12 @@ export CLICOLOR=1
 export LSCOLORS=exfxbxdxcxegedabagacad
 export TERM=xterm-256color
 
+# This fn sets the title of the iterm tab
+# bash$ title my-little-pony
+function title {
+    echo -ne "\033]0;"$*"\007"
+}
+
 #alias pi="ssh pi@192.168.1.13"
 alias gf='fg'
 alias asa='source activate' # anaconda source activate
