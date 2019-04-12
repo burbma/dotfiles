@@ -92,5 +92,8 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 " Treat build.boot as a clojure file.
 autocmd BufNewFile,BufRead build.boot set filetype=clojure
 
+" Compile latex
+autocmd BufWritePost, *.tex silent! execute "!/Library/TeX/texbin/pdflatex <afile>" | redraw!
+
 " Set up Ctrl-P Fuzzy File Finder
 let g:ctrlp_map = '<leader>t'
