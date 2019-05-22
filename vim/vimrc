@@ -25,7 +25,7 @@ syntax on
 
 " Set color theme
 set background=dark
-colorscheme zenburn
+colorscheme solarized
 set colorcolumn=80
 
 set backspace=indent,eol,start " Make backspace behave in a sane manner

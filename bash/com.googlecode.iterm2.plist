@@ -2052,7 +2052,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>1B725670-20D4-445C-A530-A1739EE81DD4</string>
+	<string>EC44712B-98AB-42FD-A579-2385FADB26F5</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -2164,7 +2164,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2436 1023 796 486 1680 315 2560 1440 </string>
+	<string>2387 1035 918 512 1680 315 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>1680 315 1846 1167 1680 315 2560 1440 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
