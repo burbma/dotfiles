@@ -1,8 +1,30 @@
+# START CONDA CRAP
+# Wrap up this crap...
+function conda-crap() {
+# added by Miniconda3 4.5.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/matt.burbidge/miniconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+  \eval "$__conda_setup"
+else
+  if [ -f "/Users/matt.burbidge/miniconda3/etc/profile.d/conda.sh" ]; then
+    . "/Users/matt.burbidge/miniconda3/etc/profile.d/conda.sh"
+    CONDA_CHANGEPS1=false conda activate base
+  else
+    \export PATH="/Users/matt.burbidge/miniconda3/bin:$PATH"
+  fi
+fi
+unset __conda_setup
+# <<< conda init <<<
+}
+# END CONDA CRAP
+
+
 if [[ $(uname) == 'Darwin' ]]; then
         export PATH=/usr/local/bin:$PATH
         export PATH="/usr/local/sbin:$PATH"
         [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-        alias aa="export PATH=~/miniconda3/bin:$PATH"
         alias deep="osascript ~/dotfiles/applescript/deep.scpt"
         alias shallow="osascript ~/dotfiles/applescript/shallow.scpt"
 fi
@@ -10,7 +32,6 @@ fi
 if [[ $(uname) == 'Linux' ]]; then
         source /etc/bash_completion.d/git-prompt
         alias ls='ls --color=auto'
-        alias aa="export PATH=/opt/anaconda3/bin:$PATH"
 fi
 
 # Avoid duplicates
