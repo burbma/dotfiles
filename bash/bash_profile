@@ -71,5 +71,3 @@ function title {
 
 #alias pi="ssh pi@192.168.1.13"
 alias gf='fg'
-alias asa='source activate' # anaconda source activate
-alias asd='source deactivate' # anaconda source deactivate

@@ -90,8 +90,10 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 " Need vim-tmux-focus-events plugin and `set -g focus-events on` in .tmux.conf
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 
-" Treat build.boot as a clojure file.
+" Filetypes
 autocmd BufNewFile,BufRead build.boot set filetype=clojure
+autocmd BufNewFile,BufRead *.mat set filetype=matlab
+autocmd BufNewFile,BufRead *.avsc set filetype=json
 
 " Compile latex
 autocmd BufWritePost, *.tex silent! execute "!/Library/TeX/texbin/pdflatex <afile>" | redraw!
