@@ -15,7 +15,8 @@
 [credential]
 	helper = osxkeychain
 [alias]
-  lg = log --graph --all --pretty=format:' %C(red)%h%C(reset) - %s\n %C(blue)<%an> %C(green)%ar%C(yellow)%d%C(reset)\n'
+  lg = log --graph --pretty=format:' %C(red)%h%C(reset) - %s\n %C(blue)<%an> %C(green)%ar%C(yellow)%d%C(reset)\n'
+  lga = lg --all
   s = status
   rc = rebase --continue
   pr = pull --rebase
@@ -25,6 +26,8 @@
   cm = commit -m
   pom = push origin master
   co = checkout
+  fpa = fetch --prune --all
+  fap = fetch --all --prune
 [magit]
 	hideCampaign = true
 [filter "lfs"]
