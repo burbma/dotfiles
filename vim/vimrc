@@ -12,6 +12,9 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'hashivim/vim-terraform'
@@ -43,6 +46,9 @@ nnoremap <leader>s :wa<cr>
 
 " Show line, column, %, at bottom of window
 set ruler
+
+" Set the status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Don't wrap long lines
 set nowrap
