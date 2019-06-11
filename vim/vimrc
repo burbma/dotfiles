@@ -5,6 +5,7 @@ set nocompatible
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'jnurmine/Zenburn'
+Plug 'christoomey/vim-tmux-navigator' " Ctrl h j k l switch vim/tmux split/pane.
 Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
@@ -109,3 +110,6 @@ autocmd BufWritePost, *.tex silent! execute "!/Library/TeX/texbin/pdflatex <afil
 
 " Set up Ctrl-P Fuzzy File Finder
 let g:ctrlp_map = '<leader>t'
+
+ " Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
