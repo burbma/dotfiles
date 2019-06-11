@@ -2,8 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-let g:mapleader = ","
-
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'jnurmine/Zenburn'
@@ -39,16 +37,21 @@ set hlsearch
 " Show matches as search is typed
 set incsearch
 
-" Leader n to remove highlighted search fields
-nnoremap <leader>n :nohlsearch<cr>
-" Leader s to save all files
-nnoremap <leader>s :wa<cr>
+" Setting for whitespace visualization
+set list
+set listchars=trail:·,tab:\ \
 
-" Show line, column, %, at bottom of window
-set ruler
+" Always ensure there is a status bar
+set laststatus=2
+
+" Leader n to remove highlighted search fields
+nnoremap <leader>a :nohlsearch<cr>
 
 " Set the status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+" Show line, column, %, at bottom of window
+set ruler
 
 " Don't wrap long lines
 set nowrap
