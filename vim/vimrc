@@ -5,7 +5,6 @@ set nocompatible
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'jnurmine/Zenburn'
-Plug 'christoomey/vim-tmux-navigator' " Ctrl h j k l switch vim/tmux split/pane.
 Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
@@ -18,6 +17,16 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'hashivim/vim-terraform'
 call plug#end()
+
+" Because it almost was.
+nnoremap <C-c> <Esc>
+inoremap <C-c> <Esc>
+
+" Move between windows easier
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " 256 Colors!
 set t_Co=256
