@@ -18,6 +18,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'hashivim/vim-terraform'
 call plug#end()
 
+let g:mapleader = ","
+
 " Because it almost was.
 nnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
@@ -55,7 +57,11 @@ set listchars=trail:·,tab:\ \
 set laststatus=2
 
 " Leader n to remove highlighted search fields
-nnoremap <leader>a :nohlsearch<cr>
+nnoremap <leader>n :nohlsearch<cr>
+" Leader s to save all files
+nnoremap <leader>s :wa<cr>
+" Set up Ctrl-P Fuzzy File Finder
+let g:ctrlp_map = '<leader>t'
 
 " Set the status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -116,6 +122,3 @@ autocmd BufNewFile,BufRead *.avsc set filetype=json
 
 " Compile latex
 autocmd BufWritePost, *.tex silent! execute "!/Library/TeX/texbin/pdflatex <afile>" | redraw!
-
-" Set up Ctrl-P Fuzzy File Finder
-let g:ctrlp_map = '<leader>t'
