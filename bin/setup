@@ -13,9 +13,6 @@ ln -sf ~/dotfiles/vim ~/.vim
 mkdir -p ~/.vim-tmp
 vim +PlugInstall +qall
 
-mkdir -p ~/.config/nvim
-ln -sf ~/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-
 ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 
 sudo cp ~/dotfiles/hosts /etc/hosts
