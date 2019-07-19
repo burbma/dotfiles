@@ -2052,7 +2052,7 @@
 		</dict>
 	</dict>
 	<key>Default Bookmark Guid</key>
-	<string>AA7C4586-D8A3-4697-9BDD-EBDC6DEB4E79</string>
+	<string>EC44712B-98AB-42FD-A579-2385FADB26F5</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -2156,7 +2156,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>533 108 445 77 0 0 1680 1050 </string>
+	<string>533 33 445 77 0 0 1680 1050 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>655 719 400 129 0 0 1680 1050 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -2164,7 +2164,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>258 613 918 423 0 0 1680 1050 </string>
+	<string>515 603 1018 447 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1680 1050 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -4455,7 +4455,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Light 15</string>
+			<string>SourceCodePro-Medium 15</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -7094,7 +7094,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-07-09T14:20:43Z</date>
+	<date>2019-07-18T15:26:36Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
