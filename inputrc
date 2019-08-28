@@ -1,0 +1,5 @@
+set show-all-if-ambiguous on
+set completion-ignore-case on
+set revert-all-at-newline on
+Control-p: history-search-backward
+Control-n: history-search-forward
