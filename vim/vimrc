@@ -4,18 +4,21 @@ set nocompatible
 
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
-Plug 'jnurmine/Zenburn'
-Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'tpope/vim-surround'
+Plug 'hashivim/vim-terraform'
+Plug 'itchyny/lightline.vim'
+Plug 'jnurmine/Zenburn'
+Plug 'terryma/vim-expand-region'
+Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'hashivim/vim-terraform'
 call plug#end()
 
 let g:mapleader = ","
@@ -117,9 +120,22 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
 
 " Filetypes
-autocmd BufNewFile,BufRead build.boot set filetype=clojure
+autocmd BufNewFile,BufRead *.boot set filetype=clojure
 autocmd BufNewFile,BufRead *.mat set filetype=matlab
 autocmd BufNewFile,BufRead *.avsc set filetype=json
 
 " Compile latex
 autocmd BufWritePost, *.tex silent! execute "!/Library/TeX/texbin/pdflatex <afile>" | redraw!
+
+" lightlight
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
