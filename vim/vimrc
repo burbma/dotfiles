@@ -4,6 +4,7 @@ set nocompatible
 
 call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
+Plug 'cespare/vim-toml'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'guns/vim-sexp'
 Plug 'hashivim/vim-terraform'
