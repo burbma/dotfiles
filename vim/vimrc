@@ -12,6 +12,7 @@ Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
 Plug 'itchyny/lightline.vim'
 Plug 'jnurmine/Zenburn'
+Plug 'psf/black'
 Plug 'terryma/vim-expand-region'
 Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
 Plug 'tpope/vim-commentary'
@@ -115,6 +116,9 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+" Run Black on save.
+autocmd BufWritePre *.py execute ':Black'
 
 " Trigger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
