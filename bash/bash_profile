@@ -44,6 +44,8 @@ export HISTTIMEFORMAT="[%h %d %H:%M:%S] "
 export HISTFILE=~/.bash_eternal_history
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
+# But also just immediately send every command, helpful for tmux
+export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 source ~/dotfiles/bash/bash_colors
 export GIT_PS1_SHOWDIRTYSTATE="true"
