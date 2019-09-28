@@ -74,6 +74,7 @@ function title {
 
 #alias pi="ssh pi@192.168.1.13"
 alias gf='fg'
+alias matlab="/Applications/MATLAB_R2019b.app/bin/matlab"
 
 export PATH="$HOME/.poetry/bin:$PATH"
 source /usr/local/opt/autoenv/activate.sh
