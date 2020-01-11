@@ -7,11 +7,13 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'cespare/vim-toml'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'guns/vim-sexp'
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'hashivim/vim-terraform'
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
 Plug 'itchyny/lightline.vim'
 Plug 'jnurmine/Zenburn'
+Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
 Plug 'psf/black'
 Plug 'terryma/vim-expand-region'
 Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
