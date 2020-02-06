@@ -7,6 +7,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'guns/vim-sexp'
 Plug 'hashivim/vim-terraform'
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
 Plug 'itchyny/lightline.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'terryma/vim-expand-region'
@@ -139,3 +141,14 @@ let g:lightline = {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
+
+" YAPF (Python)
+let g:yapf#auto_format = 0
+let g:yapf#code_style = 'google'
+
+let g:slime_target = "tmux"
+let g:slime_no_mappings = 1
+let g:slime_python_ipython = 1
+xmap cpp <Plug>SlimeRegionSend
+nmap cpp <Plug>SlimeParagraphSend
+nmap cpv <Plug>SlimeConfig
