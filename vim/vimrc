@@ -142,10 +142,6 @@ let g:lightline = {
       \ },
       \ }
 
-" YAPF (Python)
-let g:yapf#auto_format = 0
-let g:yapf#code_style = 'google'
-
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1
 let g:slime_python_ipython = 1
