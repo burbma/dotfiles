@@ -150,7 +150,7 @@ let g:lightline = {
       \ }
 
 function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
+  return winwidth(0) > 79 ? &fileformat : ''
 endfunction
 
 function! LightlineFiletype()
@@ -158,7 +158,7 @@ function! LightlineFiletype()
 endfunction
 
 function! LightlineFileencoding()
-  return winwidth(0) > 70 ? &fileencoding : ''
+  return winwidth(0) > 79 ? &fileencoding : ''
 endfunction
 
 function! LightlinePercent()
