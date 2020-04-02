@@ -130,17 +130,40 @@ autocmd BufNewFile,BufRead *.avsc set filetype=json
 autocmd BufWritePost, *.tex silent! execute "!/Library/TeX/texbin/pdflatex <afile>" | redraw!
 
 " lightlight
-set noshowmode
+set noshowmode " remove redundant -- Insert -- below lightline
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ],
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
+      \   'gitbranch': 'fugitive#head',
+      \   'fileformat': 'LightlineFileformat',
+      \   'filetype': 'LightlineFiletype',
+      \   'fileencoding': 'LightlineFileencoding',
+      \   'percent': 'LightlinePercent',
       \ },
       \ }
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? &fileencoding : ''
+endfunction
+
+function! LightlinePercent()
+  return winwidth(0) > 70 ? (100 * line('.') / line('$')) . '%' : ''
+endfunction
 
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1
