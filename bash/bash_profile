@@ -25,8 +25,9 @@ if [[ $(uname) == 'Darwin' ]]; then
         export PATH=/usr/local/bin:$PATH
         export PATH="/usr/local/sbin:$PATH"
         [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-        alias deep="osascript ~/dotfiles/applescript/deep.scpt"
-        alias shallow="osascript ~/dotfiles/applescript/shallow.scpt"
+        alias deep="bash ~/dotfiles/bash/deep.sh"
+        alias feast="bash ~/dotfiles/bash/feast.sh"
+        alias all="bash ~/dotfiles/bash/all.sh"
 fi
 
 if [[ $(uname) == 'Linux' ]]; then
