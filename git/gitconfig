@@ -24,7 +24,7 @@
   ap = add -p
   aa = add -A
   cm = commit -m
-  pom = push origin master
+  pob = push origin base
   co = checkout
   fpa = fetch --prune --all
   fap = fetch --all --prune
