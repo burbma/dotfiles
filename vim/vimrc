@@ -171,3 +171,6 @@ let g:slime_python_ipython = 1
 xmap cpp <Plug>SlimeRegionSend
 nmap cpp <Plug>SlimeParagraphSend
 nmap cpv <Plug>SlimeConfig
+
+" Clojure
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef']
