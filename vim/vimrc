@@ -182,4 +182,4 @@ nmap cpp <Plug>SlimeParagraphSend
 nmap cpv <Plug>SlimeConfig
 
 " Clojure
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef', '^render']
