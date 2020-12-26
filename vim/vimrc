@@ -14,7 +14,7 @@ Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
 Plug 'itchyny/lightline.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
-Plug 'psf/black'
+Plug 'psf/black', { 'branch': 'stable' }
 Plug 'terryma/vim-expand-region'
 Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
 Plug 'tpope/vim-commentary'
