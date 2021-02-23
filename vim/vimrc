@@ -46,7 +46,7 @@ set t_Co=256
 syntax on
 
 " Set color theme
-set background=light
+set background=dark
 colorscheme solarized
 set colorcolumn=80
 
