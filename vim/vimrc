@@ -20,6 +20,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
@@ -65,6 +66,8 @@ set listchars=trail:·,tab:\ \
 " Always ensure there is a status bar
 set laststatus=2
 
+" Leader b to redraw because I override <C-l> for window changing
+nnoremap <leader>b :redraw!<cr>
 " Leader n to remove highlighted search fields
 nnoremap <leader>n :nohlsearch<cr>
 " Leader s to save all files
@@ -182,4 +185,5 @@ nmap cpp <Plug>SlimeParagraphSend
 nmap cpv <Plug>SlimeConfig
 
 " Clojure
+autocmd FileType clojure nnoremap <buffer> cpe :%Eval<cr>
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef', '^render']

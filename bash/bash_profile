@@ -37,8 +37,10 @@ fi
 
 # Avoid duplicates
 export HISTCONTROL=ignoreboth:erasedups
+# Keep infinite bash history
 export HISTFILESIZE=-1
 export HISTSIZE=-1
+# Timestamps can be nice
 export HISTTIMEFORMAT="[%h %d %H:%M:%S] "
 # Change the file location because certain bash sessions truncate .bash_history file upon close.
 # http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
@@ -71,6 +73,9 @@ export TERM=xterm-256color
 function title {
     echo -ne "\033]0;"$*"\007"
 }
+
+# Ex `random [:alnum:] 64`
+random(){ cat /dev/urandom | env LC_CTYPE=C tr -dc $1 | head -c $2; echo; }
 
 # JAVA
 # `brew install --cask adoptopenjdk{8..15}`
