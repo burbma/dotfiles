@@ -28,7 +28,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/indentpython.vim'
 call plug#end()
 
-let g:mapleader = ","
+let mapleader = ","
+let maplocalleader = "\\"
 
 " Because it almost was.
 nnoremap <C-c> <Esc>
@@ -180,10 +181,12 @@ let g:black_linelength = 80
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1
 let g:slime_python_ipython = 1
-xmap cpp <Plug>SlimeRegionSend
-nmap cpp <Plug>SlimeParagraphSend
-nmap cpv <Plug>SlimeConfig
+xnoremap cpp <Plug>SlimeRegionSend
+nnoremap cpp <Plug>SlimeParagraphSend
+nnoremap cpv <Plug>SlimeConfig
 
 " Clojure
 autocmd FileType clojure nnoremap <buffer> cpe :%Eval<cr>
+autocmd FileType clojure nnoremap <buffer> <localleader>c :silent! :CljEval (shadow.cljs.devtools.api/repl :app)<cr>
+autocmd FileType clojure nnoremap <buffer> <localleader>cq :silent! :CljsEval :cljs/quit<cr>
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef', '^render']
