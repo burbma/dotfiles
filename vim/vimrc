@@ -187,6 +187,7 @@ nnoremap cpv <Plug>SlimeConfig
 
 " Clojure
 autocmd FileType clojure nnoremap <buffer> cpe :%Eval<cr>
-autocmd FileType clojure nnoremap <buffer> <localleader>c :silent! :CljEval (shadow.cljs.devtools.api/repl :app)<cr>
+" autocmd FileType clojure nnoremap <buffer> <localleader>c :silent! :CljEval (shadow.cljs.devtools.api/repl :app)<cr>
+autocmd FileType clojure nnoremap <buffer> <localleader>c :silent! :CljEval (let [builds (into [] (shadow.cljs.devtools.api/active-builds))] (case (count builds) 0 (throw (ex-info "no active builds!" {})) 1 (shadow.cljs.devtools.api/repl (first builds)) (do (println "Pick one of the following:") (doseq [[i build-id] (map-indexed vector builds)] (println i build-id)) (let [choice (read-line)] (shadow.cljs.devtools.api/repl (get choice builds))))))<cr>
 autocmd FileType clojure nnoremap <buffer> <localleader>C :silent! :CljsEval :cljs/quit<cr>
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef', '^render']
