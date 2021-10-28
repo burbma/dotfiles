@@ -190,3 +190,8 @@ autocmd FileType clojure nnoremap <buffer> cpe :%Eval<cr>
 autocmd FileType clojure nnoremap <buffer> <localleader>c :CljEval (let [builds (into [] (shadow.cljs.devtools.api/active-builds))] (case (count builds) 0 (throw (ex-info "no active builds!" {})) 1 (shadow.cljs.devtools.api/repl (first builds)) (do (println "Pick one of the following:") (doseq [[i build-id] (map-indexed vector builds)] (println i build-id)) (println) (let [choice (Integer. (read-line))] (shadow.cljs.devtools.api/repl (get builds choice))))))<cr>
 autocmd FileType clojure nnoremap <buffer> <localleader>C :CljsEval :repl/quit<cr>
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef', '^render']
+" The '^:' stops if from indenting reader conditionals like #?(:clj ...) as
+" when you then have :cljs on the next line you don't want it indented.
+let g:clojure_fuzzy_indent_blacklist = ['^:']
+let g:clojure_align_multiline_strings = 1
+inoremap #?<space>( #?(
