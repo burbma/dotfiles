@@ -29,7 +29,7 @@ Plug 'vim-scripts/indentpython.vim'
 call plug#end()
 
 let mapleader = ","
-let maplocalleader = "\\"
+let maplocalleader = "-"
 
 " Because it almost was.
 nnoremap <C-c> <Esc>
