@@ -6,6 +6,7 @@ call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'cespare/vim-toml'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'guns/vim-sexp'
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'hashivim/vim-terraform'
@@ -43,13 +44,14 @@ map <C-l> <C-w>l
 
 " 256 Colors!
 set t_Co=256
+set termguicolors
 
 " Switch syntax highlighting on
 syntax on
 
 " Set color theme
 set background=dark
-colorscheme solarized
+colorscheme dracula
 set colorcolumn=80
 
 set backspace=indent,eol,start " Make backspace behave in a sane manner
@@ -137,10 +139,10 @@ autocmd BufNewFile,BufRead *.avsc set filetype=json
 " Compile latex
 autocmd BufWritePost, *.tex silent! execute "!/Library/TeX/texbin/pdflatex <afile>" | redraw!
 
-" lightlight
+" lightline
 set noshowmode " remove redundant -- Insert -- below lightline
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'dracula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
