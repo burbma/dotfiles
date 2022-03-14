@@ -2,7 +2,7 @@
 	name = Matt Burbidge
 	email = burbma@gmail.com
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/dotfiles/git/gitignore_global
 [merge]
 	tool = emerge

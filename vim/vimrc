@@ -17,7 +17,6 @@ Plug 'jnurmine/Zenburn'
 Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'terryma/vim-expand-region'
-Plug 'tmux-plugins/vim-tmux-focus-events' " Used for autoread file on change.
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
@@ -42,16 +41,20 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" 256 Colors!
-set t_Co=256
-set termguicolors
+" Horizontal to Right Vertical Split
+nnoremap <leader>v <C-w>H <C-w>r
 
 " Switch syntax highlighting on
 syntax on
 
-" Set color theme
-set background=dark
+" ColorSchema
+let g:dracula_italic = 0
 colorscheme dracula
+set background=dark
+highlight Normal ctermbg=None
+if (has("termguicolors"))
+  set termguicolors
+endif
 set colorcolumn=80
 
 set backspace=indent,eol,start " Make backspace behave in a sane manner
@@ -191,9 +194,19 @@ nnoremap cpv <Plug>SlimeConfig
 autocmd FileType clojure nnoremap <buffer> cpe :%Eval<cr>
 autocmd FileType clojure nnoremap <buffer> <localleader>c :CljEval (let [builds (into [] (shadow.cljs.devtools.api/active-builds))] (case (count builds) 0 (throw (ex-info "no active builds!" {})) 1 (shadow.cljs.devtools.api/repl (first builds)) (do (println "Pick one of the following:") (doseq [[i build-id] (map-indexed vector builds)] (println i build-id)) (println) (let [choice (Integer. (read-line))] (shadow.cljs.devtools.api/repl (get builds choice))))))<cr>
 autocmd FileType clojure nnoremap <buffer> <localleader>C :CljsEval :repl/quit<cr>
+autocmd FileType clojure inoremap #?<space>( #?(
+" Docs for the below are at https://github.com/clojure-vim/clojure.vim
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef', '^render']
-" The '^:' stops if from indenting reader conditionals like #?(:clj ...) as
+" The '^:' stops it from indenting reader conditionals like #?(:clj ...) as
 " when you then have :cljs on the next line you don't want it indented.
 let g:clojure_fuzzy_indent_blacklist = ['^:']
 let g:clojure_align_multiline_strings = 1
-inoremap #?<space>( #?(
+let g:clojure_discard_macro = 1
+let g:clojure_align_subforms = 1
+let g:clojure_maxlines = 300
+
+" Git
+nnoremap <leader>ga :Git add -p <cr>
+nnoremap <leader>gc :Git commit <cr>
+nnoremap <leader>gp :Git push <cr>
+nnoremap <leader>gs :Git status <cr>
