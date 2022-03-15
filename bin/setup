@@ -19,5 +19,5 @@ ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 
 ln -sf ~/dotfiles/inputrc ~/.inputrc
 
-sudo cp ~/dotfiles/hosts /etc/hosts
+# sudo cp ~/dotfiles/hosts /etc/hosts
 sudo cp ~/dotfiles/sudo /etc/pam.d/sudo
