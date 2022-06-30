@@ -74,24 +74,19 @@ export TERM=xterm-256color
 random(){ cat /dev/urandom | env LC_CTYPE=C tr -dc $1 | head -c $2; echo; }
 
 # JAVA
-# `brew install --cask adoptopenjdk{8..15}`
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8)
-export JAVA_10_HOME=$(/usr/libexec/java_home -v10)
+# brew tap homebrew/cask-versions
+# brew install --cask temurin8
+# brew install --cask temurin11
+# brew install --cask temurin17
+export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8.0)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
-export JAVA_12_HOME=$(/usr/libexec/java_home -v12)
-export JAVA_13_HOME=$(/usr/libexec/java_home -v13)
-export JAVA_14_HOME=$(/usr/libexec/java_home -v14)
-export JAVA_15_HOME=$(/usr/libexec/java_home -v15)
+export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
 
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
-alias java10='export JAVA_HOME=$JAVA_10_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
-alias java12='export JAVA_HOME=$JAVA_12_HOME'
-alias java13='export JAVA_HOME=$JAVA_13_HOME'
-alias java14='export JAVA_HOME=$JAVA_14_HOME'
-alias java15='export JAVA_HOME=$JAVA_15_HOME'
+alias java17='export JAVA_HOME=$JAVA_17_HOME'
 
-java11 # Default to java11
+java17 # Default to java11
 
 #alias pi="ssh pi@192.168.1.13"
 alias gf='fg'
