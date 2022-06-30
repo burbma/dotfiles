@@ -34,12 +34,14 @@ let maplocalleader = "-"
 " Because it almost was.
 nnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
+vnoremap <C-c> <Esc>
 
-" Move between windows easier
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+" Move between splits easier
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 
 " Horizontal to Right Vertical Split
 nnoremap <leader>v <C-w>H <C-w>r
@@ -96,7 +98,7 @@ set ignorecase
 set smartcase
 
 " Begin scrolling before hitting edges
-set scrolloff=7
+set scrolloff=0
 
 " Store temporary files in one place
 set backupdir=~/.vim-tmp
