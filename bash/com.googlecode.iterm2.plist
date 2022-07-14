@@ -6403,7 +6403,7 @@
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>0.25</real>
+				<real>0.062945127487182617</real>
 				<key>Blue Component</key>
 				<real>1</real>
 				<key>Color Space</key>
@@ -6941,7 +6941,7 @@
 			<key>Use Canonical Parser</key>
 			<false/>
 			<key>Use Cursor Guide</key>
-			<false/>
+			<true/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
