@@ -14,10 +14,9 @@ if [[ $(uname) == 'Darwin' ]]; then
         alias vim=nvim
 fi
 
-if [[ $(uname) == 'Linux' ]]; then
-        source /etc/bash_completion.d/git-prompt
-        alias ls='ls --color=auto'
-fi
+source ~/dotfiles/bash/bash_colors
+source ~/dotfiles/bash/basic-git-prompt.sh
+PROMPT_COMMAND=basic-git-prompt
 
 # Avoid duplicates
 export HISTCONTROL=ignoreboth:erasedups
@@ -33,22 +32,6 @@ export HISTFILE=~/.bash_eternal_history
 shopt -s histappend
 # But also just immediately send every command, helpful for tmux
 export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
-
-source ~/dotfiles/bash/bash_colors
-export GIT_PS1_SHOWDIRTYSTATE="true"
-export GIT_PS1_SHOWSTASHSTATE="true"
-export GIT_PS1_SHOWUNTRACKEDFILES="true"
-export GIT_PS1_SHOWUPSTREAM="auto"
-
-if [ "$SSH_CONNECTION" ] || [ "$SSH_CLIENT" ] || [ "$SSH_TTY" ]; then
-        PS1='\u@\h:\W/ $(__git_ps1 "\[$txtcyn\](%s)")\[$txtrst\]\$ '
-else
-        # PS1='\W/ $(__git_ps1 "\[$txtcyn\](%s)")\[$txtrst\]\$ '
-        if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-          __GIT_PROMPT_DIR="$(brew --prefix)/opt/bash-git-prompt/share"
-          source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-        fi
-fi
 
 bind 'set completion-ignore-case on'
 export CLICOLOR=1
