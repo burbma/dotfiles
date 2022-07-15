@@ -2322,7 +2322,7 @@
 			<key>Columns</key>
 			<integer>204</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -3168,7 +3168,7 @@
 			<key>Columns</key>
 			<integer>204</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -4000,7 +4000,7 @@
 			<key>Columns</key>
 			<integer>204</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -4389,11 +4389,11 @@
 			<key>Name</key>
 			<string>Solarized Dark</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-ExtraLight 18</string>
+			<string>Menlo-Regular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Medium 15</string>
+			<string>Menlo-Regular 11</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -4790,7 +4790,7 @@
 			<key>Columns</key>
 			<integer>204</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -5602,7 +5602,7 @@
 			<key>Columns</key>
 			<integer>204</integer>
 			<key>Command</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/opt/homebrew/bin/bash</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
@@ -6773,11 +6773,11 @@
 			<key>Name</key>
 			<string>Dracula</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-ExtraLight 18</string>
+			<string>Menlo-Regular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Medium 13</string>
+			<string>SourceCodeProRoman-Medium 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
