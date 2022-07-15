@@ -9,7 +9,7 @@ function git_prompt() {
     branch_name=${branch_name##refs/heads/}
     branch_name=${branch_name:-HEAD}
 
-    echo -n "${txtcyn}${branch_name}"
+    echo -n " (${txtcyn}${branch_name}"
 
     if git status 2> /dev/null | grep -q 'nothing to commit, working tree clean'; then
       : # Colon is a no-op.
@@ -39,11 +39,11 @@ function git_prompt() {
       echo -n "$txtrst$"
     fi
 
-  fi
+  echo -n "${txtrst})"
 
-  echo -n $txtrst
+  fi
 }
 
 function basic-git-prompt() {
-  PS1="\u@\h:\w [$(git_prompt)]\$ "
+  PS1="\u@\h:\w$(git_prompt)\$ "
 }
