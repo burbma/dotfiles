@@ -1,7 +1,7 @@
-COLOR_GIT_CLEAN='\[\033[1;30m\]'
-COLOR_GIT_MODIFIED='\[\033[0;33m\]'
-COLOR_GIT_STAGED='\[\033[0;36m\]'
-COLOR_RESET='\[\033[0m\]'
+# Requires ~/dotfiles/bash/bash_colors to be sourced already.
+COLOR_GIT_MODIFIED=$txtylw
+COLOR_GIT_STAGED=$txtcyn
+COLOR_RESET=$txtrst
 
 function git_prompt() {
   if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
@@ -12,7 +12,7 @@ function git_prompt() {
     echo -n ":"
 
     if [[ $(git status 2> /dev/null | tail -n1) = *"nothing to commit"* ]]; then
-      echo -n "$COLOR_GIT_CLEAN$branch_name$COLOR_RESET"
+      echo -n "$branch_name$COLOR_RESET"
     elif [[ $(git status 2> /dev/null | head -n5) = *"Changes to be committed"* ]]; then
       echo -n "$COLOR_GIT_STAGED$branch_name$COLOR_RESET"
     else
