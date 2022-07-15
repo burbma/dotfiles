@@ -11,14 +11,39 @@ function git_prompt() {
 
     echo -n ":"
 
-    if [[ $(git status 2> /dev/null | tail -n1) = *"nothing to commit"* ]]; then
-      echo -n "$branch_name$COLOR_RESET"
-    elif [[ $(git status 2> /dev/null | head -n5) = *"Changes to be committed"* ]]; then
-      echo -n "$COLOR_GIT_STAGED$branch_name$COLOR_RESET"
-    else
-      echo -n "$COLOR_GIT_MODIFIED$branch_name*$COLOR_RESET"
+    echo -n "${txtcyn}${branch_name}"
+
+    if git status 2> /dev/null | grep -q 'nothing to commit, working tree clean'; then
+      : # Colon is a no-op.
     fi
+
+    if git status 2> /dev/null | grep -q 'Changes not staged for commit'; then
+      echo -n "${txtred}*"
+    fi
+
+    if git status 2> /dev/null | grep -q 'Changes to be committed'; then
+      echo -n "${txtylw}+"
+    fi
+
+    if git status 2> /dev/null | grep -q 'Your branch is ahead of'; then
+      echo -n "${txtgrn}>"
+    fi
+
+    if git status 2> /dev/null | grep -q 'Your branch is behind'; then
+      echo -n "${txtred}<"
+    fi
+
+    if git status 2> /dev/null | grep -q 'Untracked files'; then
+      echo -n "${txtcyn}%"
+    fi
+
+    if git stash list 2> /dev/null | grep -q 'stash'; then
+      echo -n "$txtrst$"
+    fi
+
   fi
+
+  echo -n $txtrst
 }
 
 function basic-git-prompt() {
