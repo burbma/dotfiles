@@ -9,8 +9,6 @@ function git_prompt() {
     branch_name=${branch_name##refs/heads/}
     branch_name=${branch_name:-HEAD}
 
-    echo -n ":"
-
     echo -n "${txtcyn}${branch_name}"
 
     if git status 2> /dev/null | grep -q 'nothing to commit, working tree clean'; then
@@ -47,5 +45,5 @@ function git_prompt() {
 }
 
 function basic-git-prompt() {
-  PS1="\u@\h:[\w$(git_prompt)] \$ "
+  PS1="\u@\h:\w [$(git_prompt)]\$ "
 }
