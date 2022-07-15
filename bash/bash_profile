@@ -63,11 +63,12 @@ random(){ cat /dev/urandom | env LC_CTYPE=C tr -dc $1 | head -c $2; echo; }
 # brew install --cask temurin8
 # brew install --cask temurin11
 # brew install --cask temurin17
-export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8.0)
+# On M1 I manually installed Zulu 11 and 17 via DMG
+# export JAVA_8_HOME=$(/usr/libexec/java_home -v1.8.0)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
 
-alias java8='export JAVA_HOME=$JAVA_8_HOME'
+# alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java17='export JAVA_HOME=$JAVA_17_HOME'
 
