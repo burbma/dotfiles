@@ -14,7 +14,6 @@ if [[ $(uname) == 'Darwin' ]]; then
         alias vim=nvim
 fi
 
-source ~/dotfiles/bash/bash_colors
 source ~/dotfiles/bash/basic-git-prompt.sh
 PROMPT_COMMAND=basic-git-prompt
 
