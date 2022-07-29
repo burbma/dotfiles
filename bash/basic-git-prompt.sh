@@ -1,7 +1,4 @@
 # Requires ~/dotfiles/bash/bash_colors to be sourced already.
-COLOR_GIT_MODIFIED=$txtylw
-COLOR_GIT_STAGED=$txtcyn
-COLOR_RESET=$txtrst
 
 function git_prompt() {
   if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
