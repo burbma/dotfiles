@@ -42,7 +42,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-
 " Horizontal to Right Vertical Split
 nnoremap <leader>v <C-w>H <C-w>r
 
@@ -80,6 +79,8 @@ nnoremap <leader>b :redraw!<cr>
 nnoremap <leader>n :nohlsearch<cr>
 " Leader s to save all files
 nnoremap <leader>s :wa<cr>
+" Leader r to resize
+nnoremap <leader>r :resize<space>
 " Set up Ctrl-P Fuzzy File Finder
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
