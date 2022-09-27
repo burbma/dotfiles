@@ -26,6 +26,10 @@ function git_prompt() {
       echo -n "${txtred}*"
     fi
 
+    if git status 2> /dev/null | grep -q 'Unmerged paths'; then
+      echo -n "${txtred}!"
+    fi
+
     if git status 2> /dev/null | grep -q 'Changes to be committed'; then
       echo -n "${txtylw}+"
     fi
