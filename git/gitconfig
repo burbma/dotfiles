@@ -26,8 +26,6 @@
   cm = commit -m
   pob = push origin base
   co = checkout
-  fpa = fetch --prune --all
-  fap = fetch --all --prune
 [magit]
 	hideCampaign = true
 [filter "lfs"]

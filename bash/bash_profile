@@ -5,6 +5,7 @@ if [[ $(uname) == 'Darwin' ]]; then
         export PATH=/opt/homebrew/sbin:$PATH
         export PATH=/usr/local/bin:$PATH
         export PATH="/usr/local/sbin:$PATH"
+        export PATH=/usr/local/go/bin:$PATH
         [ -f /opt/homebrew/etc/bash_completion ] && . /opt/homebrew/etc/bash_completion
         alias deep="bash ~/dotfiles/bash/deep.sh"
         alias feast="bash ~/dotfiles/bash/feast.sh"
@@ -63,3 +64,5 @@ alias gf='fg'
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+export GOPATH=~/src/go
