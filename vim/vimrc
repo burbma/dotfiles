@@ -6,6 +6,7 @@ call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'cespare/vim-toml'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dense-analysis/ale'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'guns/vim-sexp'
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
@@ -180,6 +181,11 @@ endfunction
 function! LightlinePercent()
   return winwidth(0) > 70 ? (100 * line('.') / line('$')) . '%' : ''
 endfunction
+
+" Linters
+let g:ale_linters = {'clojure': ['clj-kondo']}
+let g:ale_set_highlights = 0
+let g:ale_sign_column_always = 0
 
 " Python formatter
 " Run Black on save.
