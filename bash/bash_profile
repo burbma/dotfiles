@@ -1,18 +1,24 @@
 export EDITOR=vim
 if [[ $(uname) == 'Darwin' ]]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-        export PATH=/opt/homebrew/bin:$PATH
-        export PATH=/opt/homebrew/sbin:$PATH
-        export PATH=/usr/local/bin:$PATH
-        export PATH="/usr/local/sbin:$PATH"
-        export PATH=/usr/local/go/bin:$PATH
-        [ -f /opt/homebrew/etc/bash_completion ] && . /opt/homebrew/etc/bash_completion
-        alias deep="bash ~/dotfiles/bash/deep.sh"
-        alias feast="bash ~/dotfiles/bash/feast.sh"
-        alias all="bash ~/dotfiles/bash/all.sh"
-        export EDITOR=nvim
-        alias vi=nvim
-        alias vim=nvim
+  if [[ $(uname -m) == 'x86_64' ]]; then
+    export PATH=/usr/local/bin:$PATH
+    export PATH="/usr/local/sbin:$PATH"
+    export PATH=/usr/local/go/bin:$PATH
+    [[ -f '/usr/local/etc/bash_completion' ]] && . /usr/local/etc/bash_completion
+    [[ -r '/usr/local/etc/profile.d/bash_completion.sh' ]] && . /usr/local/etc/profile.d/bash_completion.sh
+  fi
+  if [[ $(uname -m) == 'arm64' ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    export PATH=/opt/homebrew/bin:$PATH
+    export PATH=/opt/homebrew/sbin:$PATH
+    [[ -f '/opt/homebrew/etc/bash_completion' ]] && . /opt/homebrew/etc/bash_completion
+  fi
+  alias deep="bash ~/dotfiles/bash/deep.sh"
+  alias feast="bash ~/dotfiles/bash/feast.sh"
+  alias all="bash ~/dotfiles/bash/all.sh"
+  export EDITOR=nvim
+  alias vi=nvim
+  alias vim=nvim
 fi
 
 source ~/dotfiles/bash/basic-git-prompt.sh
