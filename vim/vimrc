@@ -6,23 +6,27 @@ call plug#begin('~/dotfiles/vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'cespare/vim-toml'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'dense-analysis/ale'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'guns/vim-sexp'
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
-Plug 'hashivim/vim-terraform'
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
-Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
+Plug 'hashivim/vim-terraform'
 Plug 'itchyny/lightline.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
+Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
 Plug 'psf/black', { 'branch': 'stable' }
+Plug 'sevko/vim-nand2tetris-syntax'
 Plug 'terryma/vim-expand-region'
+Plug 'thosakwe/vim-flutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -57,7 +61,7 @@ highlight Normal ctermbg=None
 if (has("termguicolors"))
   set termguicolors
 endif
-set colorcolumn=80
+set colorcolumn=88
 
 set backspace=indent,eol,start " Make backspace behave in a sane manner
 
@@ -183,14 +187,14 @@ function! LightlinePercent()
 endfunction
 
 " Linters
-let g:ale_linters = {'clojure': ['clj-kondo']}
+let g:ale_linters = {'clojure': ['clj-kondo'], 'openscad': ['SCA2D']}
 let g:ale_set_highlights = 0
 let g:ale_sign_column_always = 0
 
 " Python formatter
 " Run Black on save.
 autocmd BufWritePre *.py execute ':Black'
-let g:black_linelength = 80
+let g:black_linelength = 88
 
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1
@@ -218,3 +222,7 @@ nnoremap <leader>ga :Git add -p <cr>
 nnoremap <leader>gc :Git commit <cr>
 nnoremap <leader>gp :Git push <cr>
 nnoremap <leader>gs :Git status <cr>
+
+" Flutter
+let g:flutter_split_height = 10
+let g:flutter_autoscroll = 1

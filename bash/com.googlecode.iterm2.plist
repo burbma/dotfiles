@@ -6388,7 +6388,7 @@
 			<key>Columns</key>
 			<integer>204</integer>
 			<key>Command</key>
-			<string>/opt/homebrew/bin/bash</string>
+			<string>/usr/local/bin/bash</string>
 			<key>Cursor Boost</key>
 			<real>0.0</real>
 			<key>Cursor Color</key>
