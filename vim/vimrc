@@ -137,11 +137,12 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " :Ggrep symbol under cursor
 function! GgrepCursor()
-  let expr=expand("<cexpr>")
+  let expr="'\\<" . expand("<cword>") . "\\>'"
   call fugitive#GrepCommand(3, -1, 0, 0, "", expr)
   copen
 endfunction
-map <leader>8 :call GgrepCursor()<cr>
+
+map <BS> :call GgrepCursor()<cr>
 
 " Trigger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
