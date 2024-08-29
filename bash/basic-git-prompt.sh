@@ -56,5 +56,5 @@ function git_prompt() {
 }
 
 function basic-git-prompt() {
-  PS1="\u@\h:\w$(git_prompt)\$ "
+  PS1="\w$(git_prompt)\$ "
 }

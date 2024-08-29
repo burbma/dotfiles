@@ -9,7 +9,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'dense-analysis/ale'
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'guns/vim-sexp'
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
@@ -18,7 +17,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
 Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
-Plug 'psf/black', { 'branch': 'stable' }
 Plug 'sevko/vim-nand2tetris-syntax'
 Plug 'terryma/vim-expand-region'
 Plug 'thosakwe/vim-flutter'
@@ -89,6 +87,7 @@ nnoremap <leader>r :resize<space>
 " Set up Ctrl-P Fuzzy File Finder
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_custom_ignore = '\v[\/](target|out|nashorn_code_cache|node_modules|coverage)$'
 
 " Set the status line
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -135,6 +134,14 @@ function! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
+" :Ggrep symbol under cursor
+function! GgrepCursor()
+  let expr=expand("<cexpr>")
+  call fugitive#GrepCommand(3, -1, 0, 0, "", expr)
+  copen
+endfunction
+map <leader>8 :call GgrepCursor()<cr>
 
 " Trigger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
@@ -191,11 +198,6 @@ let g:ale_linters = {'clojure': ['clj-kondo'], 'openscad': ['SCA2D']}
 let g:ale_set_highlights = 0
 let g:ale_sign_column_always = 0
 
-" Python formatter
-" Run Black on save.
-autocmd BufWritePre *.py execute ':Black'
-let g:black_linelength = 88
-
 let g:slime_target = "tmux"
 let g:slime_no_mappings = 1
 let g:slime_python_ipython = 1
@@ -226,3 +228,6 @@ nnoremap <leader>gs :Git status <cr>
 " Flutter
 let g:flutter_split_height = 10
 let g:flutter_autoscroll = 1
+
+" Helps ctrl-p with large trees, specifically E363: pattern uses more memory than 'maxmempattern'
+set mmp=5000
