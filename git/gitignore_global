@@ -4,3 +4,7 @@
 
 # Mac files
 .DS_Store
+
+# Clojure
+.cpcache/
+.nrepl-port

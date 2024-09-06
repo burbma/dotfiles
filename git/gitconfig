@@ -26,6 +26,7 @@
   cm = commit -m
   pob = push origin base
   co = checkout
+  dc = diff --cached
 [magit]
 	hideCampaign = true
 [filter "lfs"]
