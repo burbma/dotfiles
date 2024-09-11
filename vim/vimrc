@@ -160,38 +160,56 @@ autocmd BufWritePost, *.tex silent! execute "!/Library/TeX/texbin/pdflatex <afil
 
 " lightline
 set noshowmode " remove redundant -- Insert -- below lightline
-let g:lightline = {
-      \ 'colorscheme': 'dracula',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ],
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \   'fileformat': 'LightlineFileformat',
-      \   'filetype': 'LightlineFiletype',
-      \   'fileencoding': 'LightlineFileencoding',
-      \   'percent': 'LightlinePercent',
-      \ },
-      \ }
+ let g:lightline = {
+       \ 'colorscheme': 'dracula',
+       \ 'active': {
+       \   'left': [ [ 'mode', 'paste' ],
+       \             [ 'readonly', 'gitbranch', 'filename', 'modified' ] ],
+       \   'right': [ [ 'lineinfo' ],
+       \              [ 'percent' ],
+       \              [ 'fileformat', 'fileencoding', 'filetype' ] ],
+       \ },
+       \ 'component_function': {
+       \   'mode': 'LightlineMode',
+       \   'gitbranch': 'fugitive#Head',
+       \   'fileinfo': 'LightlineFileInfo',
+       \   'fileformat': 'LightlineFileformat',
+       \   'filetype': 'LightlineFiletype',
+       \   'fileencoding': 'LightlineFileencoding',
+       \   'percent': 'LightlinePercent',
+       \ },
+       \ }
 
-function! LightlineFileformat()
-  return winwidth(0) > 93 ? &fileformat : ''
-endfunction
+ function! LightlineFileInfo()
+   return winwidth(0) > 93 ? &relativepath : &filename
+ endfunction
 
-function! LightlineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-endfunction
+ function! LightlineFileformat()
+   return winwidth(0) > 93 ? &fileformat : ''
+ endfunction
 
-function! LightlineFileencoding()
-  return winwidth(0) > 93 ? &fileencoding : ''
-endfunction
+ function! LightlineFiletype()
+   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+ endfunction
 
-function! LightlinePercent()
-  return winwidth(0) > 70 ? (100 * line('.') / line('$')) . '%' : ''
+ function! LightlineFileencoding()
+   return winwidth(0) > 93 ? &fileencoding : ''
+ endfunction
+
+ function! LightlinePercent()
+   return winwidth(0) > 70 ? (100 * line('.') / line('$')) . '%' : ''
+ endfunction
+
+function! LightlineMode()
+  let fname = expand('%:t')
+  return fname == '__Tagbar__' ? 'Tagbar' :
+  \ fname == 'ControlP' ? 'CtrlP' :
+  \ lightline#mode() == 'NORMAL' ? 'N' :
+  \ lightline#mode() == 'INSERT' ? 'I' :
+  \ lightline#mode() == 'VISUAL' ? 'V' :
+  \ lightline#mode() == 'V-LINE' ? 'V' :
+  \ lightline#mode() == 'V-BLOCK' ? 'V' :
+  \ lightline#mode() == 'REPLACE' ? 'R' : lightline#mode()
 endfunction
 
 " Linters
@@ -225,6 +243,7 @@ nnoremap <leader>ga :Git add -p <cr>
 nnoremap <leader>gc :Git commit <cr>
 nnoremap <leader>gp :Git push <cr>
 nnoremap <leader>gs :Git status <cr>
+nnoremap <leader>gd :Git diff <cr>
 
 " Flutter
 let g:flutter_split_height = 10
