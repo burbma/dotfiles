@@ -3,23 +3,23 @@
 set nocompatible
 
 call plug#begin('~/dotfiles/vim/plugged')
+Plug 'arcticicestudio/nord-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'cespare/vim-toml'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'dense-analysis/ale'
+" Plug 'dart-lang/dart-vim-plugin'
+" Plug 'dense-analysis/ale'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'guns/vim-sexp'
-Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
-Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+" Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+" Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'hashivim/vim-terraform'
 Plug 'itchyny/lightline.vim'
 Plug 'jnurmine/Zenburn'
-Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
-Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
-Plug 'sevko/vim-nand2tetris-syntax'
+" Plug 'jpalardy/vim-slime', { 'for': 'python' } " Needed for vim-ipython-cell
+" Plug 'sevko/vim-nand2tetris-syntax'
 Plug 'terryma/vim-expand-region'
-Plug 'thosakwe/vim-flutter'
+" Plug 'thosakwe/vim-flutter'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
@@ -28,7 +28,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-scripts/indentpython.vim'
+" Plug 'vim-scripts/indentpython.vim'
 call plug#end()
 
 let mapleader = ","
@@ -59,13 +59,12 @@ highlight Normal ctermbg=None
 if (has("termguicolors"))
   set termguicolors
 endif
-set colorcolumn=88
+set colorcolumn=80,95
 
 set backspace=indent,eol,start " Make backspace behave in a sane manner
 
 " Highlight search results
 set hlsearch
-
 " Show matches as search is typed
 set incsearch
 
@@ -156,7 +155,7 @@ autocmd BufNewFile,BufRead *.mat set filetype=matlab
 autocmd BufNewFile,BufRead *.avsc set filetype=json
 
 " Compile latex
-autocmd BufWritePost, *.tex silent! execute "!/Library/TeX/texbin/pdflatex <afile>" | redraw!
+" autocmd BufWritePost, *.tex silent! execute "!/Library/TeX/texbin/pdflatex <afile>" | redraw!
 
 " lightline
 set noshowmode " remove redundant -- Insert -- below lightline
@@ -213,16 +212,17 @@ function! LightlineMode()
 endfunction
 
 " Linters
-let g:ale_linters = {'clojure': ['clj-kondo'], 'openscad': ['SCA2D']}
-let g:ale_set_highlights = 0
-let g:ale_sign_column_always = 0
+" let g:ale_linters = {'clojure': ['clj-kondo'], 'openscad': ['SCA2D']}
+" let g:ale_linters = {'clojure': ['clj-kondo']}
+" let g:ale_set_highlights = 0
+" let g:ale_sign_column_always = 0
 
-let g:slime_target = "tmux"
-let g:slime_no_mappings = 1
-let g:slime_python_ipython = 1
-xnoremap cpp <Plug>SlimeRegionSend
-nnoremap cpp <Plug>SlimeParagraphSend
-nnoremap cpv <Plug>SlimeConfig
+" let g:slime_target = "tmux"
+" let g:slime_no_mappings = 1
+" let g:slime_python_ipython = 1
+" xnoremap cpp <Plug>SlimeRegionSend
+" nnoremap cpp <Plug>SlimeParagraphSend
+" nnoremap cpv <Plug>SlimeConfig
 
 " Clojure
 autocmd FileType clojure nnoremap <buffer> cpe :%Eval<cr>
@@ -230,7 +230,10 @@ autocmd FileType clojure nnoremap <buffer> <localleader>c :CljEval (let [builds 
 autocmd FileType clojure nnoremap <buffer> <localleader>C :CljsEval :repl/quit<cr>
 autocmd FileType clojure inoremap #?<space>( #?(
 " Docs for the below are at https://github.com/clojure-vim/clojure.vim
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef', '^render']
+let g:clojure_syntax_keywords = {
+    \   'clojureMacro': ["pco/defmutation", "defmutation", "defsc", "comp/defsc", "pco/defresolver", "defnc"]
+    \ }
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef', '^render', '^go-loop', 'action', 'ok-action', 'error-action', 'remote', 'rest']
 " The '^:' stops it from indenting reader conditionals like #?(:clj ...) as
 " when you then have :cljs on the next line you don't want it indented.
 let g:clojure_fuzzy_indent_blacklist = ['^:']
@@ -239,15 +242,15 @@ let g:clojure_discard_macro = 1
 let g:clojure_maxlines = 1000
 
 " Git
-nnoremap <leader>ga :Git add -p <cr>
-nnoremap <leader>gc :Git commit <cr>
-nnoremap <leader>gp :Git push <cr>
-nnoremap <leader>gs :Git status <cr>
-nnoremap <leader>gd :Git diff <cr>
+" nnoremap <leader>ga :Git add -p <cr>
+" nnoremap <leader>gc :Git commit <cr>
+" nnoremap <leader>gp :Git push <cr>
+" nnoremap <leader>gs :Git status <cr>
+" nnoremap <leader>gd :Git diff <cr>
 
 " Flutter
-let g:flutter_split_height = 10
-let g:flutter_autoscroll = 1
+" let g:flutter_split_height = 10
+" let g:flutter_autoscroll = 1
 
 " Helps ctrl-p with large trees, specifically E363: pattern uses more memory than 'maxmempattern'
 set mmp=5000

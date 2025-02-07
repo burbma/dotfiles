@@ -23,3 +23,6 @@ ln -sf ~/dotfiles/inputrc ~/.inputrc
 
 # sudo cp ~/dotfiles/hosts /etc/hosts
 sudo cp ~/dotfiles/sudo /etc/pam.d/sudo
+
+defaults write com.apple.dock appswitcher-all-displays -bool true
+killall Dock

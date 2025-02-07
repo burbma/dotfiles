@@ -65,14 +65,14 @@ export JAVA_21_HOME=$(/usr/libexec/java_home -v21)
 alias java17='export JAVA_HOME=$JAVA_17_HOME'
 alias java21='export JAVA_HOME=$JAVA_21_HOME'
 
-java17 # Default to java11
+java21 # Default to java21
 
 #alias pi="ssh pi@192.168.1.13"
 alias gf='fg'
 
 function python-mode() {
   export PYENV_ROOT="$HOME/.pyenv"
-  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  command -v pyenv > /dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 }
