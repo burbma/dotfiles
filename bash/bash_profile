@@ -49,6 +49,8 @@ export TERM=xterm-256color
 # Ex `random [:alnum:] 64`
 random(){ cat /dev/urandom | env LC_CTYPE=C tr -dc $1 | head -c $2; echo; }
 
+alias git-merged="~/dotfiles/bin/git-merged"
+
 # JAVA
 # brew tap homebrew/cask-versions
 # brew install --cask temurin8

@@ -28,6 +28,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'nvim-treesitter/nvim-treesitter'
 " Plug 'vim-scripts/indentpython.vim'
 call plug#end()
 
@@ -81,8 +82,9 @@ nnoremap <leader>b :redraw!<cr>
 nnoremap <leader>n :nohlsearch<cr>
 " Leader s to save all files
 nnoremap <leader>s :wa<cr>
-" Leader r to resize
-nnoremap <leader>r :resize<space>
+" Leader r to resize - I never use this, the mouse is just more convenient.
+" I'm going to take this mapping for :Require in clj, remap if wanted.
+" nnoremap <leader>r :resize<space>
 " Set up Ctrl-P Fuzzy File Finder
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -115,7 +117,10 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 autocmd FileType python set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
-autocmd FileType yaml set shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType vue set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+autocmd FileType html set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+autocmd FileType typescript set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
+autocmd FileType javascript set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 
 " vsplit opens to the right instead of left
 set splitright
@@ -225,15 +230,25 @@ endfunction
 " nnoremap cpv <Plug>SlimeConfig
 
 " Clojure
+" Turning off sexp clone commands because it conflicts with
+" my personal <localleader>c and <localleader>C
+let g:sexp_mappings = {
+    \ 'sexp_clone_list': '<localleader>8',
+    \ 'sexp_clone_element': '<localleader>9'
+    \ }
 autocmd FileType clojure nnoremap <buffer> cpe :%Eval<cr>
+autocmd FileType clojure nnoremap <buffer> <leader>r :Require<cr>
 autocmd FileType clojure nnoremap <buffer> <localleader>c :CljEval (let [builds (into [] (shadow.cljs.devtools.api/active-builds))] (case (count builds) 0 (throw (ex-info "no active builds!" {})) 1 (shadow.cljs.devtools.api/repl (first builds)) (do (println "Pick one of the following:") (doseq [[i build-id] (map-indexed vector builds)] (println i build-id)) (println) (let [choice (Integer. (read-line))] (shadow.cljs.devtools.api/repl (get builds choice))))))<cr>
 autocmd FileType clojure nnoremap <buffer> <localleader>C :CljsEval :repl/quit<cr>
 autocmd FileType clojure inoremap #?<space>( #?(
+" localleader " to insert a single quote and ignore vim-sexp
+autocmd FileType clojure nnoremap <localleader>" i<C-v>"<Esc>
+
 " Docs for the below are at https://github.com/clojure-vim/clojure.vim
 let g:clojure_syntax_keywords = {
-    \   'clojureMacro': ["pco/defmutation", "defmutation", "defsc", "comp/defsc", "pco/defresolver", "defnc"]
+    \   'clojureMacro': ["pco/defmutation", "defmutation", "defsc", "comp/defsc", "pco/defresolver", "defnc", "defrouter", "match"]
     \ }
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef', '^render', '^go-loop', 'action', 'ok-action', 'error-action', 'remote', 'rest']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^fdef', '^render', '^go-loop', 'action', 'ok-action', 'error-action', 'remote', 'rest', 'backend', 'match']
 " The '^:' stops it from indenting reader conditionals like #?(:clj ...) as
 " when you then have :cljs on the next line you don't want it indented.
 let g:clojure_fuzzy_indent_blacklist = ['^:']
@@ -251,6 +266,10 @@ let g:clojure_maxlines = 1000
 " Flutter
 " let g:flutter_split_height = 10
 " let g:flutter_autoscroll = 1
+
+" SQL
+" I don't use the default plugin, but I do use ctrl-c so I move the prefix.
+let g:ftplugin_sql_omni_key = '<C-j>'
 
 " Helps ctrl-p with large trees, specifically E363: pattern uses more memory than 'maxmempattern'
 set mmp=5000

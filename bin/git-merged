@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+branch=$(git rev-parse --abbrev-ref HEAD)
+git checkout main
+git pull --rebase
+git fetch -ap
+read -p "Delete $branch? (y/n): " confirm && [[ $confirm == [yY] ]] || exit 1
+git branch -D $branch

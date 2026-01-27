@@ -14,6 +14,8 @@
 	user = burbma
 [credential]
 	helper = osxkeychain
+[diff]
+  external = difft
 [alias]
   lg = log --graph --pretty=format:' %C(red)%h%C(reset) - %s\n %C(blue)<%an> %C(green)%ar%C(yellow)%d%C(reset)\n'
   lga = lg --all
@@ -24,9 +26,10 @@
   ap = add -p
   aa = add -A
   cm = commit -m
-  pob = push origin base
   co = checkout
   dc = diff --cached
+  ds = show --ext-diff
+  dl = log -p --ext-diff
 [magit]
 	hideCampaign = true
 [filter "lfs"]
